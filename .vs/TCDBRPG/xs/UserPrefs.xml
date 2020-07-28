@@ -1,0 +1,30 @@
+﻿<Properties StartupConfiguration="{99C9C2E1-459B-1275-FC0D-3A1840777246}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Code/Movement/MovingCharacter.cs">
+    <Files>
+      <File FileName="Assets/Code/Movement/MovingCharacter.cs" Line="42" Column="1" />
+      <File FileName="Assets/Code/Movement/PlayerControlledCharacter.cs" Line="12" Column="24" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="TCDBRPG" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Code" expanded="True">
+                <Node name="Movement" expanded="True">
+                  <Node name="MovingCharacter.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0d48327b-a020-42e5-8b47-afe8d63adbfe" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
