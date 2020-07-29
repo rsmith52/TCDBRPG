@@ -21,25 +21,44 @@ namespace Movement
             if (Input.GetKey(KeyCode.RightArrow))
             {
                 inputX = 1;
-                spriteRenderer.flipX = false;
+                sprite_renderer.flipX = false;
             }
             else if (Input.GetKey(KeyCode.LeftArrow))
             {
                 inputX = -1;
-                spriteRenderer.flipX = true;
+                sprite_renderer.flipX = true;
+            }
+
+            // Jump
+            jump_input = 0;
+            if (Input.GetKey(KeyCode.Space))
+            {
+                jump_input = 1;
             }
 
             // Normalize
-            _movement = new Vector3(inputX, 0, inputY).normalized;
+            movement = new Vector3(inputX, 0, inputY).normalized;
 
             // Update Animator
             animator.SetBool(WALK_PROPERTY,
-                             Math.Abs(_movement.sqrMagnitude) > Mathf.Epsilon);
+                             Math.Abs(movement.sqrMagnitude) > Mathf.Epsilon);
         }
 
         private void FixedUpdate()
         {
-            physicsBody.velocity = _movement * speed;
+            if (IsGrounded())
+            {
+                physics_body.velocity = movement * speed;
+                if (jump_input == 1)
+                {
+                    physics_body.velocity = new Vector3(0, jump_input, 0) * jump_force;
+                }
+            }
+            else
+            {
+                physics_body.velocity += movement * AIR_CONTROL_MOD * speed;
+            }
+
         }
 
         #endregion
