@@ -181,7 +181,7 @@ MonoBehaviour:
   speed:
     base_value: 1
   jump_force:
-    base_value: 3.5
+    base_value: 3
   health:
     base_value: 1
     cur_value: 1
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character_stats: {fileID: 6876542499525129895}
-  animator: {fileID: 5872152338180630614}
   physics_body: {fileID: 5872152340056195763}
   collider: {fileID: 5872152340056195724}
   sprite_renderer: {fileID: 5872152338180630612}
+  animator: {fileID: 5872152338180630614}

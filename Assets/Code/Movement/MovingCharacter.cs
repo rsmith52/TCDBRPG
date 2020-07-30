@@ -30,7 +30,7 @@ namespace Movement
         protected Rigidbody physics_body = null;
 
         [SerializeField]
-        protected new CapsuleCollider collider = null;
+        protected new Collider collider = null;
 
         [SerializeField]
         protected SpriteRenderer sprite_renderer = null;
