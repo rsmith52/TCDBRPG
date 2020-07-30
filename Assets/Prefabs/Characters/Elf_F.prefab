@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5477972066326757308}
   - component: {fileID: 5477972066326757309}
   - component: {fileID: 5477972066326757310}
+  - component: {fileID: 7565426385622723788}
   m_Layer: 0
   m_Name: Elf_F
   m_TagString: Player
@@ -82,6 +83,26 @@ MonoBehaviour:
   physics_body: {fileID: 5477972066326757309}
   collider: {fileID: 5477972066326757308}
   sprite_renderer: {fileID: 5477972067873314357}
+--- !u!114 &7565426385622723788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5477972066326757311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27cd9d7c66ef140a5b40207868c22c5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed:
+    base_value: 0
+  health:
+    base_value: 0
+    cur_value: 0
+  mana:
+    base_value: 0
+    cur_value: 0
 --- !u!1 &5477972067873314358
 GameObject:
   m_ObjectHideFlags: 0

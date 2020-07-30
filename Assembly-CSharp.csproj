@@ -63,9 +63,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Code\Card\Card.cs" />
+    <Compile Include="Assets\Code\Cards\Card.cs" />
     <Compile Include="Assets\Code\Movement\MovingCharacter.cs" />
     <Compile Include="Assets\Code\Movement\PlayerControlledCharacter.cs" />
+    <Compile Include="Assets\Code\Stats\CharacterStats.cs" />
+    <Compile Include="Assets\Code\Stats\MeteredStat.cs" />
+    <Compile Include="Assets\Code\Stats\Stat.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.6.0\Cinemachine Example Scenes\Scenes\3rdPersonWithAimMode\ActivateOnKeypress.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.6.0\Cinemachine Example Scenes\Scenes\CameraMagnets\CameraMagnetProperty.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.6.0\Cinemachine Example Scenes\Scenes\CameraMagnets\CameraMagnetTargetController.cs" />

@@ -113,6 +113,7 @@ GameObject:
   - component: {fileID: 6621194320900869235}
   - component: {fileID: 6621194320900869245}
   - component: {fileID: 6621194320900869234}
+  - component: {fileID: 3114573448023479975}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Player
@@ -183,3 +184,23 @@ MonoBehaviour:
   physics_body: {fileID: 6621194320900869245}
   collider: {fileID: 6621194320900869235}
   sprite_renderer: {fileID: 6621194319274930799}
+--- !u!114 &3114573448023479975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6621194320900869246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27cd9d7c66ef140a5b40207868c22c5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed:
+    base_value: 0
+  health:
+    base_value: 0
+    cur_value: 0
+  mana:
+    base_value: 0
+    cur_value: 0

@@ -49,6 +49,7 @@ namespace Movement
             if (IsGrounded())
             {
                 physics_body.velocity = movement * speed;
+
                 if (jump_input == 1)
                 {
                     physics_body.velocity = new Vector3(0, jump_input, 0) * jump_force;
