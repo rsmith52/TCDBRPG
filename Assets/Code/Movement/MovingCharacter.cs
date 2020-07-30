@@ -9,7 +9,7 @@ namespace Movement
 
         protected static readonly int WALK_PROPERTY = Animator.StringToHash("Walk");
         protected static readonly float GROUND_DIST = 0.05f;
-        protected static readonly float AIR_CONTROL_MOD = 0.1f;
+        protected static readonly float AIR_CONTROL_MOD = 0.075f;
 
         #endregion
 

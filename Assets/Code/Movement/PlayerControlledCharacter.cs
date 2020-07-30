@@ -54,9 +54,10 @@ namespace Movement
                     physics_body.velocity = new Vector3(0, jump_input, 0) * jump_force;
                 }
             }
+            // While in the air, provide less control
             else
             {
-                physics_body.velocity += movement * AIR_CONTROL_MOD * speed;
+                physics_body.velocity += (movement * AIR_CONTROL_MOD * speed);
             }
 
         }
