@@ -1,4 +1,11 @@
 ﻿using UnityEngine;
+using Stats;
+
+/* 
+ * This code contains the basic information and setup needed for a character
+ * that can move. Player controlled characters extend from this, and AI
+ * controlled characters will also extend from this.
+ */
 
 namespace Movement
 {
@@ -15,15 +22,9 @@ namespace Movement
 
         #region Inspector
 
-        [SerializeField]
-        protected float speed = 1f;
-
-        [SerializeField]
-        protected float jump_force = 3.5f;
-
         [Header("Relations")]
         [SerializeField]
-        protected Animator animator = null;
+        protected CharacterStats character_stats = null;
 
         [SerializeField]
         protected Rigidbody physics_body = null;
@@ -34,11 +35,16 @@ namespace Movement
         [SerializeField]
         protected SpriteRenderer sprite_renderer = null;
 
+        [SerializeField]
+        protected Animator animator = null;
+
         #endregion
 
 
         #region Fields
 
+        protected float speed;
+        protected float jump_force;
         protected Vector3 movement;
         protected int jump_input;
         protected float dist_to_ground;

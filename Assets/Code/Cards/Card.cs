@@ -1,5 +1,10 @@
 ﻿using UnityEngine;
 
+/*
+ * This code contains some general card metadata, and creates the base Card
+ * ScriptableObject that all types of cards will extend from.
+ */
+
 namespace Cards
 {
     #region Enums
@@ -9,7 +14,6 @@ namespace Cards
         Common,
         Uncommon,
         Rare,
-        VeryRare,
         Legendary
     };
 

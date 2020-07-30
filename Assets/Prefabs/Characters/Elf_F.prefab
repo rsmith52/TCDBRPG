@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5477972066326757283}
   - component: {fileID: 5477972066326757308}
   - component: {fileID: 5477972066326757309}
+  - component: {fileID: 5893346020414497604}
   - component: {fileID: 5477972066326757310}
-  - component: {fileID: 7565426385622723788}
   m_Layer: 0
   m_Name: Elf_F
   m_TagString: Player
@@ -65,25 +65,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &5477972066326757310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5477972066326757311}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e08816ee6eaab44688d47d64ce8111a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  jump_force: 3.5
-  animator: {fileID: 5477972067873314363}
-  physics_body: {fileID: 5477972066326757309}
-  collider: {fileID: 5477972066326757308}
-  sprite_renderer: {fileID: 5477972067873314357}
---- !u!114 &7565426385622723788
+--- !u!114 &5893346020414497604
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,13 +78,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed:
-    base_value: 0
+    base_value: 1
+  jump_force:
+    base_value: 3.5
   health:
-    base_value: 0
-    cur_value: 0
+    base_value: 1
+    cur_value: 1
   mana:
-    base_value: 0
-    cur_value: 0
+    base_value: 1
+    cur_value: 1
+--- !u!114 &5477972066326757310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5477972066326757311}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08816ee6eaab44688d47d64ce8111a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character_stats: {fileID: 5893346020414497604}
+  animator: {fileID: 5477972067873314363}
+  physics_body: {fileID: 5477972066326757309}
+  collider: {fileID: 5477972066326757308}
+  sprite_renderer: {fileID: 5477972067873314357}
 --- !u!1 &5477972067873314358
 GameObject:
   m_ObjectHideFlags: 0

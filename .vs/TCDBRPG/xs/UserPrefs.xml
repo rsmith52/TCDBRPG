@@ -6,11 +6,11 @@
           <Node name="TCDBRPG" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Code" expanded="True">
-                <Node name="Cards" expanded="True">
-                  <Node name="Card.cs" selected="True" />
-                </Node>
+                <Node name="Cards" expanded="True" />
                 <Node name="Movement" expanded="True" />
-                <Node name="Stats" expanded="True" />
+                <Node name="Stats" expanded="True">
+                  <Node name="Modifier.cs" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
@@ -20,7 +20,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0953d775-8fcd-4fb6-9bc3-efbf3f890235" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="495e8110-9b48-48a3-9cd2-8c8a38440e98" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

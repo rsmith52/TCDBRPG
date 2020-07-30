@@ -1,6 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
+/* 
+ * This code handles player input to control a character. Input is checked with
+ * every update but movement is only applied every fixed update to remain
+ * consistent through frame rates.
+ */
+
 namespace Movement
 {
     public class PlayerControlledCharacter : MovingCharacter
@@ -46,6 +52,9 @@ namespace Movement
 
         private void FixedUpdate()
         {
+            speed = character_stats.speed.GetValue();
+            jump_force = character_stats.jump_force.GetValue();
+
             if (IsGrounded())
             {
                 physics_body.velocity = movement * speed;

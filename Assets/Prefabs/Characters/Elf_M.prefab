@@ -112,8 +112,8 @@ GameObject:
   - component: {fileID: 5872152340056195725}
   - component: {fileID: 5872152340056195724}
   - component: {fileID: 5872152340056195763}
-  - component: {fileID: 5872152340056195762}
   - component: {fileID: 6876542499525129895}
+  - component: {fileID: 5872152340056195762}
   m_Layer: 0
   m_Name: Elf_M
   m_TagString: Player
@@ -166,24 +166,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &5872152340056195762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5872152340056195761}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e08816ee6eaab44688d47d64ce8111a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  jump_force: 3.5
-  animator: {fileID: 5872152338180630614}
-  physics_body: {fileID: 5872152340056195763}
-  collider: {fileID: 5872152340056195724}
-  sprite_renderer: {fileID: 5872152338180630612}
 --- !u!114 &6876542499525129895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,10 +179,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed:
-    base_value: 0
+    base_value: 1
+  jump_force:
+    base_value: 3.5
   health:
-    base_value: 0
-    cur_value: 0
+    base_value: 1
+    cur_value: 1
   mana:
-    base_value: 0
-    cur_value: 0
+    base_value: 1
+    cur_value: 1
+--- !u!114 &5872152340056195762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5872152340056195761}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08816ee6eaab44688d47d64ce8111a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character_stats: {fileID: 6876542499525129895}
+  animator: {fileID: 5872152338180630614}
+  physics_body: {fileID: 5872152340056195763}
+  collider: {fileID: 5872152340056195724}
+  sprite_renderer: {fileID: 5872152338180630612}

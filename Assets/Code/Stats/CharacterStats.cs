@@ -1,5 +1,10 @@
 ﻿using UnityEngine;
 
+/*
+ * This code defines the stats every character will have, split between
+ * regular stats and metered stats.
+ */
+
 namespace Stats
 {
     public class CharacterStats : MonoBehaviour
@@ -8,6 +13,7 @@ namespace Stats
 
         [Header("Stats")]
         public Stat speed;
+        public Stat jump_force;
 
         #endregion
 
