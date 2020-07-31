@@ -59,6 +59,27 @@ namespace Movement
             dist_to_ground = collider.bounds.extents.y;
         }
 
+        protected void FixedUpdate()
+        {
+            speed = character_stats.speed.GetValue();
+            jump_force = character_stats.jump_force.GetValue();
+
+            if (IsGrounded())
+            {
+                physics_body.velocity = movement * speed;
+
+                if (jump_input == 1)
+                {
+                    physics_body.velocity = new Vector3(0, jump_input, 0) * jump_force;
+                }
+            }
+            // While in the air, provide less control
+            else
+            {
+                physics_body.velocity += (movement * AIR_CONTROL_MOD * speed);
+            }
+        }
+
         protected bool IsGrounded()
         {
             return Physics.Raycast(transform.position, -Vector3.up, dist_to_ground + GROUND_DIST);

@@ -469,7 +469,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 372928318}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -1, y: 4.4748735, z: -3.4748738}
+  m_LocalPosition: {x: 1, y: 4.4748735, z: -1.4748738}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -540,7 +540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAACQn+uF53TZSwIAAPIEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVMty4jAQ/BVK503KxkmR7G3XIWQPeVTYrVx8EdIYq5Allx4BkuLfdySL2JATprtnpudhfxKhbAfMabMwgj9qDuTnhIRn8mMykA+wo2utluIDjpo3wV0TRDRqXqkTGvE8hFndgjOC/VJrGcQZgl6JWpt2ztdQausswjWVFpAy2oVohdDnhOxSwD79foTfyQGfGCgH5rvqIrvMT4ReMUnbDngwPOiLpC+iSGEjic8uA8W0lMImH8Ttu9hnSTvrsQsUcEGxr+gg1GtArBuHf6bj4Oe6tuCSO0P3d8LgePqs5LfuZ9ZSu+l9vVPpQ51pdnUTbfVZH78JimI6i4La6PbhWDrPQhnXCLZ5pXtGrRvNdQzfnXr3akvlhq4kvDWgnvTCaK84ks74EOotTO9Gqb7aKxtgm0HXuz0Dffd9R6MFHeIAdqUU7SoO/6oHllLHkd+GGDC4nj9oOF6GTZkQDSb+WfhL1+MTSsS9MNYhlQqq4G6lvQlSMo8zC814V2qjIMLJcweKSrd/wTTufItn3KjsGXNPw8uSiifu+A6chUR40GfZGfWit1/Lso3ePoJtnr2TQsFgOhBPOKdSK9UfmT0lQ9TSm5qyUdTaC356W6QuZvn11Sqr85vi9poVF7OMTaG4yYsVna2ueU7i6QmFbVL50vtM08GlqSG5wjM7fkImC0O7eO/c0O1CfLR65E+oWi+ZAVDPfYbjhCwYLIJvJp9zgfNZgnNCxXWTz4pIzTbAq69EVex0vnOGVkOWinTiXbuAVKSMH46KHMjhP1BLAwQUAAAICAAAkJ/rqzda5G0AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNVRUEovSizIKAaKGII4pZkpIHa0UpqxuaGpSZJBmqGFsaVpsrGuuUGyUaqxhaFxUqJ5kmmKoVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAAkJ/rhed02UsCAADyBAAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAkJ/rqzda5G0AAAB4AAAACQAkAAAAAAAAAAAAAACYAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAFADAAAAAA==
+    dataString: UEsDBBQAAAgIAACQn+t0n65xSgIAAPIEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVMly4jAQ/RVK58mUjaEgc5thyxwIVJhULr4IqY1VyJJLS9iKfx9JFrEDJ8v9Xne/XqQLYkLXQIxUC8XoUlJAv3rIn9GPXgu+wBHvpNiwM9w4H4ya0pNw4Lxhw6Szp95NywqMYuS32HFPTpzRClZIVc3oDiZSG+3MBeYaHKSk8d7CmS49dIwOp/g9+2/v6k4EhAH1yHpKfqbfiFYQjqsaqBfc8rPIzwJJuEIi3vgTyTnTUQcypzrUualLUOALpQy7soKAvvstge1KE3++fFdFocFEcQqfpky57jRB0R/ZtKzCet/I+sTc+jT9ZDAOqpqoywdClvVHgVAoWb3cUqeJT2NKRvZv+ESwNp22ds3TVntTrBUHzPd4y+GjBPEqF0paQR1slPXOVkN/2gn2VeCkBLJveY3eO6OtH4fUmdA1tOA44azaBkGDxrDhMvT82fuAcvP56ySH1dAxkrN6Ee8a/uFdd4ciMGdKGwfFhMKr20qrPBXN3cG3n1gzkUpAsEbJNQjMzWntopj7Md5hnax3yBz7yxJzR+x2B+5cgrnlJ8kdtJYHuEXSpTwsQZcrazgT0Ir2wKtr00QK0WyZ/g56r41VBSYdr51l9PtyoSIbpcPBNinScfY8JNnTKCF9yMZptsWj7ZCmKOweE65MzNeNztgdNzPRBhduz25PSG+hcB0Wnip8WLBzJTv6mCjkhigAsWoi3DqkQbkk7mbSGWWuPxswhokwbXTJEZdkDzT/CpSHSmdHo3DeRslRzT6l8ZYcTcLDkaMruv4HUEsDBBQAAAgIAACQn+urN1rkbQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM01VFQSi9KLMgoBooYgjilmSkgdrRSmrG5oalJkkGaoYWxpWmysa65QbJRqrGFoXFSonmSaYqhUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAACQn+t0n65xSgIAAPIEAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAACQn+urN1rkbQAAAHgAAAAJACQAAAAAAAAAAAAAAJcCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAATwMAAAAA
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -554,7 +554,7 @@ MonoBehaviour:
   showSearchTree: 0
   unwalkableNodeDebugSize: 0.3
   logPathResults: 1
-  maxNearestNodeDistance: 100
+  maxNearestNodeDistance: 10
   scanOnStartup: 1
   fullGetNearestSearch: 0
   prioritizeGraphs: 0
@@ -981,7 +981,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 1851218795}
+  m_Follow: {fileID: 5477972066309220854}
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 5
@@ -1005,7 +1005,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204701060}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -1, y: 4.4748735, z: -3.4748738}
+  m_LocalPosition: {x: 1, y: 4.4748735, z: -1.4748738}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 512159605}
@@ -1110,8 +1110,9 @@ MonoBehaviour:
   collider: {fileID: 5477972066309220841}
   sprite_renderer: {fileID: 5477972067824255072}
   animator: {fileID: 5477972067824255086}
-  target_pos: {fileID: 1851218795}
   seeker: {fileID: 1615390351}
+  target_pos: {fileID: 1851218795}
+  next_waypoint_distance: 0.3
 --- !u!114 &1615390351
 MonoBehaviour:
   m_ObjectHideFlags: 0
