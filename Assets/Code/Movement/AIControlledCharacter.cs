@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Pathfinding;
 using System;
+using Utilities;
 
 /*
  * This code handles movement for a character not being controlled by the
@@ -21,7 +22,7 @@ namespace Movement
         protected Transform target;
 
         [SerializeField]
-        protected float next_waypoint_distance = 0.3f;
+        protected float next_waypoint_distance = 1.5f;
 
         [SerializeField]
         public float repath_rate = 0.5f;
@@ -31,8 +32,8 @@ namespace Movement
 
         #region Fields
 
-        private Path path = null;
-        private int current_waypoint = 0;
+        private Path path = null; // current path to follow
+        private int current_waypoint = 0; // current waypoint index
         private bool reached_end_of_path;
         private float last_repath = float.NegativeInfinity;
 
@@ -104,7 +105,7 @@ namespace Movement
             movement = (path.vectorPath[current_waypoint] - transform.position).normalized;
 
             // Update Animator
-            animator.SetBool(WALK_PROPERTY,
+            animator.SetBool(Constants.WALK_PROPERTY,
                              Math.Abs(movement.sqrMagnitude) > Mathf.Epsilon);
         }
 

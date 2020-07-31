@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using Utilities;
 
 /* 
  * This code handles player input to control a character. Input is checked with
@@ -46,7 +47,7 @@ namespace Movement
             movement = new Vector3(inputX, 0, inputY).normalized;
 
             // Update Animator
-            animator.SetBool(WALK_PROPERTY,
+            animator.SetBool(Constants.WALK_PROPERTY,
                              Math.Abs(movement.sqrMagnitude) > Mathf.Epsilon);
         }
 

@@ -12,15 +12,6 @@ namespace Movement
 {
     public abstract class MovingCharacter : MonoBehaviour
     {
-        #region Constants
-
-        protected static readonly int WALK_PROPERTY = Animator.StringToHash("Walk");
-        protected static readonly float GROUND_DIST = 0.05f;
-        protected static readonly float AIR_CONTROL_MOD = 0.075f;
-
-        #endregion
-
-
         #region Inspector
 
         [Header("Relations")]
@@ -44,9 +35,9 @@ namespace Movement
 
         #region Fields
 
-        protected float speed;
+        protected float speed; // movement speed
         protected float jump_force;
-        protected Vector3 movement;
+        protected Vector3 movement; // movement direction
         protected int jump_input;
         protected float dist_to_ground;
 
@@ -77,13 +68,13 @@ namespace Movement
             // While in the air, provide less control
             else
             {
-                physics_body.velocity += (movement * AIR_CONTROL_MOD * speed);
+                physics_body.velocity += (movement * Constants.AIR_CONTROL_MOD * speed);
             }
         }
 
         protected bool IsGrounded()
         {
-            return Physics.Raycast(transform.position, -Vector3.up, dist_to_ground + GROUND_DIST);
+            return Physics.Raycast(transform.position, -Vector3.up, dist_to_ground + Constants.GROUND_DIST);
         }
 
         #endregion
