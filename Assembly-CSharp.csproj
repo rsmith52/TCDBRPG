@@ -71,6 +71,8 @@
     <Compile Include="Assets\Code\Stats\MeteredStat.cs" />
     <Compile Include="Assets\Code\Stats\Modifier.cs" />
     <Compile Include="Assets\Code\Stats\Stat.cs" />
+    <Compile Include="Assets\Code\Utilities\Constants.cs" />
+    <Compile Include="Assets\Code\Utilities\Settings.cs" />
     <Reference Include="UnityEngine">
       <HintPath>/Applications/Unity/Hub/Editor/2019.4.6f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

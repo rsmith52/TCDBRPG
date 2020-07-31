@@ -1,10 +1,5 @@
 ﻿<Properties StartupConfiguration="{99C9C2E1-459B-1275-FC0D-3A1840777246}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Code/Movement/AIControlledCharacter.cs">
-    <Files>
-      <File FileName="Assets/Code/Movement/MovingCharacter.cs" Line="54" Column="1" />
-      <File FileName="Assets/Code/Movement/PlayerControlledCharacter.cs" />
-      <File FileName="Assets/Code/Movement/AIControlledCharacter.cs" Line="113" Column="26" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
@@ -12,10 +7,11 @@
             <Node name="Assets" expanded="True">
               <Node name="Code" expanded="True">
                 <Node name="Cards" expanded="True" />
-                <Node name="Movement" expanded="True">
-                  <Node name="AIControlledCharacter.cs" selected="True" />
+                <Node name="Movement" expanded="True" />
+                <Node name="Stats" expanded="True">
+                  <Node name="CharacterStats.cs" selected="True" />
                 </Node>
-                <Node name="Stats" expanded="True" />
+                <Node name="Utilities" expanded="True" />
               </Node>
             </Node>
           </Node>

@@ -13,6 +13,8 @@ namespace Stats
 
         [Header("Stats")]
         public Stat speed;
+
+        [HideInInspector]
         public Stat jump_force;
 
         #endregion

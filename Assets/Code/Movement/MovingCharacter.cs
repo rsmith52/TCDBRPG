@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Stats;
+using Utilities;
 
 /* 
  * This code contains the basic information and setup needed for a character
@@ -68,7 +69,7 @@ namespace Movement
             {
                 physics_body.velocity = movement * speed;
 
-                if (jump_input == 1)
+                if (jump_input == 1 && Settings.ALLOW_JUMP)
                 {
                     physics_body.velocity = new Vector3(0, jump_input, 0) * jump_force;
                 }
