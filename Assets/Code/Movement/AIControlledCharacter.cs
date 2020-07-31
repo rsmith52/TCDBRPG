@@ -1,6 +1,6 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using Pathfinding;
+using System;
 
 /*
  * This code handles movement for a character not being controlled by the
@@ -18,7 +18,7 @@ namespace Movement
         protected Seeker seeker;
 
         [SerializeField]
-        protected Transform target_pos;
+        protected Transform target;
 
         [SerializeField]
         protected float next_waypoint_distance = 0.3f;
@@ -58,7 +58,7 @@ namespace Movement
 
                 // Start a new path to the targetPosition, call the the OnPathComplete function
                 // when the path has been calculated (which may take a few frames depending on the complexity)
-                seeker.StartPath(transform.position, target_pos.position);
+                seeker.StartPath(transform.position, target.position);
             }
 
             if (path == null)
@@ -99,15 +99,13 @@ namespace Movement
                 }
             }
 
-            // Slow down smoothly upon approaching the end of the path
-            // This value will smoothly go from 1 to 0 as the agent approaches the last waypoint in the path.
-            var speedFactor = reached_end_of_path ? Mathf.Sqrt(distance_to_waypoint / next_waypoint_distance) : 1f;
-
             // Direction to the next waypoint
             // Normalize it so that it has a length of 1 world unit
-            Vector3 dir = (path.vectorPath[current_waypoint] - transform.position).normalized;
-            // Multiply the direction by our desired speed to get a velocity
-            movement = dir * speed * speedFactor;
+            movement = (path.vectorPath[current_waypoint] - transform.position).normalized;
+
+            // Update Animator
+            animator.SetBool(WALK_PROPERTY,
+                             Math.Abs(movement.sqrMagnitude) > Mathf.Epsilon);
         }
 
         private void OnPathComplete(Path p)

@@ -132,8 +132,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6621194320900869246}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6621194319274930793}
   m_Father: {fileID: 0}
@@ -149,8 +149,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.05
-  m_Height: 0.11
+  m_Radius: 0.3
+  m_Height: 0.7
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &6621194320900869245
@@ -232,9 +232,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed:
-    base_value: 1
-  jump_force:
     base_value: 3
+  jump_force:
+    base_value: 6.5
   health:
     base_value: 1
     cur_value: 1
@@ -276,6 +276,6 @@ MonoBehaviour:
   sprite_renderer: {fileID: 6621194319274930799}
   animator: {fileID: 6621194319274930792}
   seeker: {fileID: 7146715378243091858}
-  target_pos: {fileID: 0}
-  next_waypoint_distance: 0.3
+  target: {fileID: 0}
+  next_waypoint_distance: 3
   repath_rate: 0.5
