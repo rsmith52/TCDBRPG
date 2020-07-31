@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 5477972066326757283}
   - component: {fileID: 5477972066326757308}
   - component: {fileID: 5477972066326757309}
+  - component: {fileID: 2292581436885285770}
   - component: {fileID: 5893346020414497604}
   - component: {fileID: 5477972066326757310}
+  - component: {fileID: 1533932949722862381}
   m_Layer: 0
   m_Name: Elf_F
   m_TagString: Player
@@ -28,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5477972066326757311}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 5477972067873314356}
@@ -65,6 +67,34 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &2292581436885285770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5477972066326757311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
 --- !u!114 &5893346020414497604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,6 +134,27 @@ MonoBehaviour:
   collider: {fileID: 5477972066326757308}
   sprite_renderer: {fileID: 5477972067873314357}
   animator: {fileID: 5477972067873314363}
+--- !u!114 &1533932949722862381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5477972066326757311}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61885b1fdb1f94e568869315a070f7dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character_stats: {fileID: 5893346020414497604}
+  physics_body: {fileID: 5477972066326757309}
+  collider: {fileID: 5477972066326757308}
+  sprite_renderer: {fileID: 5477972067873314357}
+  animator: {fileID: 5477972067873314363}
+  seeker: {fileID: 2292581436885285770}
+  target_pos: {fileID: 0}
+  next_waypoint_distance: 0.3
+  repath_rate: 0.5
 --- !u!1 &5477972067873314358
 GameObject:
   m_ObjectHideFlags: 0

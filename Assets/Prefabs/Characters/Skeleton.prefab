@@ -112,8 +112,10 @@ GameObject:
   - component: {fileID: 6621194320900869244}
   - component: {fileID: 6621194320900869235}
   - component: {fileID: 6621194320900869245}
+  - component: {fileID: 7146715378243091858}
   - component: {fileID: 3114573448023479975}
   - component: {fileID: 6621194320900869234}
+  - component: {fileID: 5960320349519636945}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Player
@@ -129,7 +131,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6621194320900869246}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 6621194319274930793}
@@ -166,6 +168,34 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &7146715378243091858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6621194320900869246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
 --- !u!114 &3114573448023479975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,3 +235,24 @@ MonoBehaviour:
   collider: {fileID: 6621194320900869235}
   sprite_renderer: {fileID: 6621194319274930799}
   animator: {fileID: 6621194319274930792}
+--- !u!114 &5960320349519636945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6621194320900869246}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61885b1fdb1f94e568869315a070f7dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character_stats: {fileID: 3114573448023479975}
+  physics_body: {fileID: 6621194320900869245}
+  collider: {fileID: 6621194320900869235}
+  sprite_renderer: {fileID: 6621194319274930799}
+  animator: {fileID: 6621194319274930792}
+  seeker: {fileID: 7146715378243091858}
+  target_pos: {fileID: 0}
+  next_waypoint_distance: 0.3
+  repath_rate: 0.5
