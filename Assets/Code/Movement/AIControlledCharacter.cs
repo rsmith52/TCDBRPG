@@ -23,14 +23,18 @@ namespace Movement
         [SerializeField]
         protected float next_waypoint_distance = 0.3f;
 
+        [SerializeField]
+        public float repath_rate = 0.5f;
+        
         #endregion
 
 
         #region Fields
 
-        private Path path;
+        private Path path = null;
         private int current_waypoint = 0;
         private bool reached_end_of_path;
+        private float last_repath = float.NegativeInfinity;
 
         #endregion
 
@@ -44,17 +48,19 @@ namespace Movement
             // OnPathComplete will be called every time a path is returned to
             // this seeker
             seeker.pathCallback += OnPathComplete;
-
-            // Start to calculate a new path to the targetPosition object, return
-            // the result to the OnPathComplete method.
-            // Path requests are asynchronous, so when the OnPathComplete method
-            // is called depends on how long it takes to calculate the path.
-            // Usually it is called the next frame.
-            seeker.StartPath(transform.position, target_pos.position);
         }
 
         public void Update()
         {
+            if (Time.time > last_repath + repath_rate && seeker.IsDone())
+            {
+                last_repath = Time.time;
+
+                // Start a new path to the targetPosition, call the the OnPathComplete function
+                // when the path has been calculated (which may take a few frames depending on the complexity)
+                seeker.StartPath(transform.position, target_pos.position);
+            }
+
             if (path == null)
             {
                 // We have no path to follow yet, so don't do anything
@@ -69,7 +75,6 @@ namespace Movement
             float distance_to_waypoint;
             while (true)
             {
-
                 // If you want maximum performance you can check the squared distance instead to get rid of a
                 // square root calculation. But that is outside the scope of this tutorial.
                 distance_to_waypoint = Vector3.Distance(transform.position, path.vectorPath[current_waypoint]);
@@ -107,11 +112,24 @@ namespace Movement
 
         private void OnPathComplete(Path p)
         {
+            Debug.Log("A path was calculated. Did it fail with an error? " + p.error);
+
+            // Path pooling. To avoid unnecessary allocations paths are reference counted.
+            // Calling Claim will increase the reference count by 1 and Release will reduce
+            // it by one, when it reaches zero the path will be pooled and then it may be used
+            // by other scripts. The ABPath.Construct and Seeker.StartPath methods will
+            // take a path from the pool if possible. See also the documentation page about path pooling.
+            p.Claim(this);
             if (!p.error)
             {
+                if (path != null) path.Release(this);
                 path = p;
                 // Reset the waypoint counter so that we start to move towards the first point in the path
                 current_waypoint = 0;
+            }
+            else
+            {
+                p.Release(this);
             }
         }
 
