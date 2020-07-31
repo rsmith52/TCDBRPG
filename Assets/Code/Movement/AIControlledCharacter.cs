@@ -37,9 +37,10 @@ namespace Movement
 
         private Path path = null; // current path to follow
         private int current_waypoint = 0; // current waypoint index
-        public bool reached_end_of_path;
+        private bool reached_end_of_path;
         private float last_repath = float.NegativeInfinity;
         private float time_started = 0;
+        private float speed_factor;
 
         #endregion
 
@@ -61,6 +62,7 @@ namespace Movement
             {
                 // We have no path to follow yet, so we do nothing
                 // or we wait a certain amount of time before starting the movement
+                // or the total path distance is shorter than the set min path distance
                 return;
             }
 
@@ -95,10 +97,13 @@ namespace Movement
                     break;
                 }
             }
+            // Slow down smoothly upon approaching the end of the path
+            // This value will smoothly go from 1 to 0 as the agent approaches the last waypoint in the path.
+            speed_factor = reached_end_of_path ? 0f : 1f;
 
             // Direction to the next waypoint
             // Normalize it so that it has a length of 1 world unit
-            movement = (path.vectorPath[current_waypoint] - transform.position).normalized;
+            movement = ((path.vectorPath[current_waypoint] - transform.position).normalized) * speed_factor;
 
             // Update Animator
             animator.SetBool(Constants.WALK_PROPERTY,

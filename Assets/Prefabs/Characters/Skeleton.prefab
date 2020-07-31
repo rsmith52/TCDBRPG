@@ -277,5 +277,6 @@ MonoBehaviour:
   animator: {fileID: 6621194319274930792}
   seeker: {fileID: 7146715378243091858}
   target: {fileID: 0}
-  next_waypoint_distance: 1.5
+  next_waypoint_distance: 1
   repath_rate: 0.5
+  wait_before_start: 0

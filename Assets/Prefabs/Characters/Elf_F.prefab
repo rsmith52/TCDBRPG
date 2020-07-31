@@ -176,8 +176,9 @@ MonoBehaviour:
   animator: {fileID: 5477972067873314363}
   seeker: {fileID: 2292581436885285770}
   target: {fileID: 0}
-  next_waypoint_distance: 1.5
+  next_waypoint_distance: 1
   repath_rate: 0.5
+  wait_before_start: 0
 --- !u!1 &5477972067873314358
 GameObject:
   m_ObjectHideFlags: 0
