@@ -54,7 +54,7 @@ namespace Movement
 
         #region MonoBehavior
 
-        protected void Start()
+        protected virtual void Start()
         {
             dist_to_ground = collider.bounds.extents.y;
         }
