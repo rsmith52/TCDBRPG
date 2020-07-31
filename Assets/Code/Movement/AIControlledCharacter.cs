@@ -25,7 +25,10 @@ namespace Movement
         protected float next_waypoint_distance = 1.5f;
 
         [SerializeField]
-        public float repath_rate = 0.5f;
+        protected float repath_rate = 0.5f;
+
+        [SerializeField]
+        protected float wait_before_start = 0;
         
         #endregion
 
@@ -34,22 +37,14 @@ namespace Movement
 
         private Path path = null; // current path to follow
         private int current_waypoint = 0; // current waypoint index
-        private bool reached_end_of_path;
+        public bool reached_end_of_path;
         private float last_repath = float.NegativeInfinity;
+        private float time_started = 0;
 
         #endregion
 
 
         #region MonoBehavior
-
-        protected override void Start()
-        {
-            base.Start();
-
-            // OnPathComplete will be called every time a path is returned to
-            // this seeker
-            seeker.pathCallback += OnPathComplete;
-        }
 
         public void Update()
         {
@@ -62,9 +57,10 @@ namespace Movement
                 seeker.StartPath(transform.position, target.position);
             }
 
-            if (path == null)
+            if (path == null || Time.time < time_started + wait_before_start)
             {
-                // We have no path to follow yet, so don't do anything
+                // We have no path to follow yet, so we do nothing
+                // or we wait a certain amount of time before starting the movement
                 return;
             }
 
@@ -135,6 +131,24 @@ namespace Movement
         private void OnDisable()
         {
             seeker.pathCallback -= OnPathComplete;
+            // Update Animator
+            movement = new Vector3(0, 0, 0);
+            animator.SetBool(Constants.WALK_PROPERTY,
+                             Math.Abs(movement.sqrMagnitude) > Mathf.Epsilon);
+        }
+
+        private void OnEnable()
+        {
+            // Reset fields
+            path = null;
+            current_waypoint = 0;
+            reached_end_of_path = false;
+            last_repath = float.NegativeInfinity;
+            time_started = Time.time;
+
+            // OnPathComplete will be called every time a path is returned to
+            // this seeker
+            seeker.pathCallback += OnPathComplete;
         }
 
         #endregion
