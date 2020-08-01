@@ -16,5 +16,12 @@ namespace Utilities
 
         #endregion
 
+
+        #region Scenes
+
+        public static readonly int PVE_SCENE = 1;
+
+        #endregion
+
     }
 }
