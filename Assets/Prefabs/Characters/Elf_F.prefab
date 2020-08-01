@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 3980339579176248803}
   - component: {fileID: 5893346020414497604}
   - component: {fileID: 5477972066326757310}
-  - component: {fileID: 1533932949722862381}
   m_Layer: 0
   m_Name: Elf_F
   m_TagString: Player
@@ -134,12 +133,6 @@ MonoBehaviour:
     base_value: 3
   jump_force:
     base_value: 6.5
-  health:
-    base_value: 1
-    cur_value: 1
-  mana:
-    base_value: 1
-    cur_value: 1
 --- !u!114 &5477972066326757310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,7 +140,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5477972066326757311}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e08816ee6eaab44688d47d64ce8111a8, type: 3}
   m_Name: 
@@ -157,28 +150,6 @@ MonoBehaviour:
   collider: {fileID: 5477972066326757308}
   sprite_renderer: {fileID: 5477972067873314357}
   animator: {fileID: 5477972067873314363}
---- !u!114 &1533932949722862381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5477972066326757311}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61885b1fdb1f94e568869315a070f7dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  character_stats: {fileID: 5893346020414497604}
-  physics_body: {fileID: 5477972066326757309}
-  collider: {fileID: 5477972066326757308}
-  sprite_renderer: {fileID: 5477972067873314357}
-  animator: {fileID: 5477972067873314363}
-  seeker: {fileID: 2292581436885285770}
-  target: {fileID: 0}
-  next_waypoint_distance: 1
-  repath_rate: 0.5
-  wait_before_start: 0
 --- !u!1 &5477972067873314358
 GameObject:
   m_ObjectHideFlags: 0

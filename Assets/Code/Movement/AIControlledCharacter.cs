@@ -103,7 +103,7 @@ namespace Movement
             // Update Animator
             if (Math.Abs(movement.x) > Math.Abs(movement.y))
             {
-                sprite_renderer.flipX = movement.x > 0 ? false : true;
+                sprite_renderer.flipX = movement.x < 0 ? true : false;
             }
             animator.SetBool(Constants.WALK_PROPERTY,
                              Math.Abs(movement.sqrMagnitude) > Mathf.Epsilon);

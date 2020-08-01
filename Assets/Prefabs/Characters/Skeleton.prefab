@@ -115,7 +115,6 @@ GameObject:
   - component: {fileID: 7146715378243091858}
   - component: {fileID: 6071996144215897450}
   - component: {fileID: 3114573448023479975}
-  - component: {fileID: 6621194320900869234}
   - component: {fileID: 5960320349519636945}
   m_Layer: 0
   m_Name: Skeleton
@@ -235,29 +234,6 @@ MonoBehaviour:
     base_value: 3
   jump_force:
     base_value: 6.5
-  health:
-    base_value: 1
-    cur_value: 1
-  mana:
-    base_value: 1
-    cur_value: 1
---- !u!114 &6621194320900869234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6621194320900869246}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e08816ee6eaab44688d47d64ce8111a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  character_stats: {fileID: 3114573448023479975}
-  physics_body: {fileID: 6621194320900869245}
-  collider: {fileID: 6621194320900869235}
-  sprite_renderer: {fileID: 6621194319274930799}
-  animator: {fileID: 6621194319274930792}
 --- !u!114 &5960320349519636945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,7 +241,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6621194320900869246}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 61885b1fdb1f94e568869315a070f7dc, type: 3}
   m_Name: 

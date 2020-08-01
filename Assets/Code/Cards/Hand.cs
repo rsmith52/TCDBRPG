@@ -1,18 +1,30 @@
-﻿using System.Collections;
+﻿/*
+ * This code defines the hand, where cards that are currently able to be
+ * cast go. It also includes various methods for interacting with the hand.
+ */
+
 using System.Collections.Generic;
-using UnityEngine;
 
-public class Hand : MonoBehaviour
+namespace Cards
 {
-    // Start is called before the first frame update
-    void Start()
+    [System.Serializable]
+    public class Hand
     {
-        
-    }
+        #region Fields
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        protected List<Card> cards;
+
+        #endregion
+
+
+        #region Constructor
+
+        public Hand()
+        {
+            cards = new List<Card>();
+        }
+
+        #endregion
+
     }
 }

@@ -9,7 +9,7 @@ using UnityEngine;
 namespace Cards
 {
     [System.Serializable]
-    public class Deck : CardZone
+    public class Deck
     {
         #region Fields
 

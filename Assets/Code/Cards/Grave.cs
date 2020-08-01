@@ -1,18 +1,31 @@
-﻿using System.Collections;
+﻿/*
+ * This code defines the grave zone, where cards go after being cast.
+ * It includes the list of cards, as well as various methods for interacting
+ * with the grave.
+ */
+
 using System.Collections.Generic;
-using UnityEngine;
 
-public class Grave : MonoBehaviour
+namespace Cards
 {
-    // Start is called before the first frame update
-    void Start()
+    [System.Serializable]
+    public class Grave
     {
-        
-    }
+        #region Fields
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        protected List<Card> cards;
+
+        #endregion
+
+
+        #region Constructor
+
+        public Grave()
+        {
+            cards = new List<Card>();
+        }
+
+        #endregion
+
     }
 }

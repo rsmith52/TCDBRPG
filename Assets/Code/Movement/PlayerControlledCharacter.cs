@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using Utilities;
 
@@ -12,6 +13,13 @@ namespace Movement
 {
     public class PlayerControlledCharacter : MovingCharacter
     {
+        #region Fields
+
+        private Vector3 facing_dir;
+
+        #endregion
+
+
         #region MonoBehavior
 
         private void Update()
@@ -45,6 +53,28 @@ namespace Movement
 
             // Normalize
             movement = new Vector3(inputX, 0, inputY).normalized;
+
+            // Check for edges
+            if (!Settings.ALLOW_WALK_OFF)
+            {
+                facing_dir = transform.TransformDirection(Vector3.down);
+                if (!Physics.Raycast(transform.position - new Vector3(0f, 0f, 1f), facing_dir, 1))
+                {
+                    movement.z = movement.z > 0 ? movement.z : 0;
+                }
+                if (!Physics.Raycast(transform.position - new Vector3(0.75f, 0f, 0f), facing_dir, 1))
+                {
+                    movement.x = movement.x > 0 ? movement.x : 0;
+                }
+                if (!Physics.Raycast(transform.position - new Vector3(0f, 0f, -0.1f), facing_dir, 1))
+                {
+                    movement.z = movement.z < 0 ? movement.z : 0;
+                }
+                if (!Physics.Raycast(transform.position - new Vector3(-0.75f, 0f, 0f), facing_dir, 2))
+                {
+                    movement.x = movement.x < 0 ? movement.x : 0;
+                }
+            }
 
             // Update Animator
             animator.SetBool(Constants.WALK_PROPERTY,

@@ -8,7 +8,8 @@ namespace Utilities
     {
         #region Control Settings
 
-        public static readonly bool ALLOW_JUMP = false;
+        public static readonly bool ALLOW_JUMP = false; // requires ALLOW_WALK_OFF
+        public static readonly bool ALLOW_WALK_OFF = false;
         public static readonly float BASE_SPEED = 3f;
         public static readonly float BASE_JUMP = 6.5f;
 
