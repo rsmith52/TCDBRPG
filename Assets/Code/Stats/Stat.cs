@@ -16,10 +16,27 @@ namespace Stats
         #region Fields
 
         [SerializeField]
-        protected float base_value = 1f;
+        protected float base_value;
 
         // Can be negative or positive
-        protected List<Modifier> modifiers = new List<Modifier>();
+        protected List<Modifier> modifiers;
+
+        #endregion
+
+
+        #region Constructor
+
+        public Stat()
+        {
+            base_value = 0f;
+            modifiers = new List<Modifier>();
+        }
+
+        public Stat(float base_value)
+        {
+            this.base_value = base_value;
+            modifiers = new List<Modifier>();
+        }
 
         #endregion
 
@@ -37,25 +54,24 @@ namespace Stats
             return ret_val;
         }
 
+        public void SetBaseValue(float value)
+        {
+            base_value = value;
+        }
+
         public void ChangeBaseValue(float value)
         {
-            {
-                base_value += value;
-            }
+            base_value += value;
         }
 
         public void AddModifier(Modifier modifier)
         {
-            {
-                modifiers.Add(modifier);
-            }
+            modifiers.Add(modifier);
         }
 
         public void RemoveModifier(Modifier modifier)
         {
-            {
-                modifiers.Remove(modifier);
-            }
+            modifiers.Remove(modifier);
         }
 
         #endregion

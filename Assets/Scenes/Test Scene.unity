@@ -475,7 +475,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 372928318}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -5, y: 13.606602, z: -10.606603}
+  m_LocalPosition: {x: 0, y: 13.606602, z: -15.606603}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1011,7 +1011,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204701060}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -5, y: 13.606602, z: -10.606603}
+  m_LocalPosition: {x: 0, y: 13.606602, z: -15.606603}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 512159605}
@@ -1043,17 +1043,17 @@ PrefabInstance:
     - target: {fileID: 5960320349519636945, guid: d2320d9055bbf406597a23cc2747e267,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5960320349519636945, guid: d2320d9055bbf406597a23cc2747e267,
         type: 3}
       propertyPath: next_waypoint_distance
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5960320349519636945, guid: d2320d9055bbf406597a23cc2747e267,
         type: 3}
       propertyPath: wait_before_start
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6621194319274930794, guid: d2320d9055bbf406597a23cc2747e267,
         type: 3}
@@ -1063,7 +1063,7 @@ PrefabInstance:
     - target: {fileID: 6621194320900869244, guid: d2320d9055bbf406597a23cc2747e267,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6621194320900869244, guid: d2320d9055bbf406597a23cc2747e267,
         type: 3}
@@ -1263,7 +1263,7 @@ PrefabInstance:
     - target: {fileID: 5872152340056195725, guid: ec2fa5fe89e18498da940fa19d5d7e85,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5872152340056195725, guid: ec2fa5fe89e18498da940fa19d5d7e85,
         type: 3}
@@ -1273,7 +1273,7 @@ PrefabInstance:
     - target: {fileID: 5872152340056195725, guid: ec2fa5fe89e18498da940fa19d5d7e85,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 5872152340056195725, guid: ec2fa5fe89e18498da940fa19d5d7e85,
         type: 3}

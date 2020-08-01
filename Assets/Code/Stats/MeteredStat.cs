@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 /* 
@@ -11,12 +12,31 @@ using UnityEngine;
 namespace Stats
 {
     [System.Serializable]
-    public class MeteredStat: Stat
+    public class MeteredStat : Stat
     {
         #region Fields
 
         [SerializeField]
-        private int cur_value = 1;
+        private int cur_value;
+
+        #endregion
+
+
+        #region Constructor
+
+        public MeteredStat()
+        {
+            base_value = 0f;
+            cur_value = (int)base_value;
+            modifiers = new List<Modifier>();
+        }
+
+        public MeteredStat(float base_value)
+        {
+            this.base_value = base_value;
+            cur_value = (int)base_value;
+            modifiers = new List<Modifier>();
+        }
 
         #endregion
 
@@ -26,12 +46,12 @@ namespace Stats
         public new int GetValue()
         {
             // Add all modifiers to base stat
-            int ret_val = (int)Math.Round(base_value);
+            float ret_val = base_value;
             foreach (Modifier modifier in modifiers)
             {
                 ret_val += modifier.GetRoundedValue();
             }
-            return ret_val;
+            return (int)ret_val;
         }
 
         public int GetCurValue()
@@ -41,15 +61,12 @@ namespace Stats
 
         public void ChangeCurValue(int value)
         {
-            if (value != 0)
-            {
-                cur_value += value;
+            cur_value += value;
 
-                // Ensure value doesn't exceed max
-                if (cur_value > GetValue())
-                {
-                    cur_value = GetValue();
-                }
+            // Ensure value doesn't exceed max
+            if (cur_value > GetValue())
+            {
+                cur_value = GetValue();
             }
         }
 

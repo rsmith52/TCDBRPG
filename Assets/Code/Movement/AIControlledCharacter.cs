@@ -22,7 +22,7 @@ namespace Movement
         protected Transform target;
 
         [SerializeField]
-        protected float next_waypoint_distance = 1.5f;
+        protected float next_waypoint_distance = 1f;
 
         [SerializeField]
         protected float repath_rate = 0.5f;
@@ -40,7 +40,7 @@ namespace Movement
         private bool reached_end_of_path;
         private float last_repath = float.NegativeInfinity;
         private float time_started = 0;
-        private float speed_factor;
+        private float distance_to_waypoint;
 
         #endregion
 
@@ -60,9 +60,9 @@ namespace Movement
 
             if (path == null || Time.time < time_started + wait_before_start)
             {
-                // We have no path to follow yet, so we do nothing
-                // or we wait a certain amount of time before starting the movement
-                // or the total path distance is shorter than the set min path distance
+                // We have no path to follow yet
+                // or we are still waiting an amount of time before starting the movement
+                // so we do nothing
                 return;
             }
 
@@ -70,8 +70,6 @@ namespace Movement
             // We do this in a loop because many waypoints might be close to each other and we may reach
             // several of them in the same frame.
             reached_end_of_path = false;
-            // The distance to the next waypoint in the path
-            float distance_to_waypoint;
             while (true)
             {
                 // If you want maximum performance you can check the squared distance instead to get rid of a
@@ -97,23 +95,22 @@ namespace Movement
                     break;
                 }
             }
-            // Slow down smoothly upon approaching the end of the path
-            // This value will smoothly go from 1 to 0 as the agent approaches the last waypoint in the path.
-            speed_factor = reached_end_of_path ? 0f : 1f;
-
             // Direction to the next waypoint
+            // When the path has reached the end we stop moving
             // Normalize it so that it has a length of 1 world unit
-            movement = ((path.vectorPath[current_waypoint] - transform.position).normalized) * speed_factor;
+            movement = reached_end_of_path ? new Vector3(0, 0, 0) : (path.vectorPath[current_waypoint] - transform.position).normalized;
 
             // Update Animator
+            if (Math.Abs(movement.x) > Math.Abs(movement.y))
+            {
+                sprite_renderer.flipX = movement.x > 0 ? false : true;
+            }
             animator.SetBool(Constants.WALK_PROPERTY,
                              Math.Abs(movement.sqrMagnitude) > Mathf.Epsilon);
         }
 
         private void OnPathComplete(Path p)
         {
-            Debug.Log("A path was calculated. Did it fail with an error? " + p.error);
-
             // Path pooling. To avoid unnecessary allocations paths are reference counted.
             // Calling Claim will increase the reference count by 1 and Release will reduce
             // it by one, when it reaches zero the path will be pooled and then it may be used
@@ -136,10 +133,6 @@ namespace Movement
         private void OnDisable()
         {
             seeker.pathCallback -= OnPathComplete;
-            // Update Animator
-            movement = new Vector3(0, 0, 0);
-            animator.SetBool(Constants.WALK_PROPERTY,
-                             Math.Abs(movement.sqrMagnitude) > Mathf.Epsilon);
         }
 
         private void OnEnable()

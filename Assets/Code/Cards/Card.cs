@@ -20,7 +20,7 @@ namespace Cards
     #endregion
 
 
-    public abstract class Card : ScriptableObject
+    public class Card : ScriptableObject
     {
         #region ScriptableObject
 
