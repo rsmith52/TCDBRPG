@@ -26,19 +26,19 @@ namespace Movement
         {
             // Vertical
             float inputY = 0;
-            if (Input.GetKey(KeyCode.UpArrow))
+            if (Input.GetKey(KeyCode.W))
                 inputY = 1;
-            else if (Input.GetKey(KeyCode.DownArrow))
+            else if (Input.GetKey(KeyCode.S))
                 inputY = -1;
 
             // Horizontal
             float inputX = 0;
-            if (Input.GetKey(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.D))
             {
                 inputX = 1;
                 sprite_renderer.flipX = false;
             }
-            else if (Input.GetKey(KeyCode.LeftArrow))
+            else if (Input.GetKey(KeyCode.A))
             {
                 inputX = -1;
                 sprite_renderer.flipX = true;
