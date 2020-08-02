@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Stats;
 using Utilities;
+using UnityEngine.UI;
 
 /*
  * This code handles behavior for the heads up display, including player
@@ -45,8 +46,10 @@ namespace UI
 
         private List<GameObject> health_segments;
         private int health_total;
+        private int cur_health;
         private List<GameObject> mana_segments;
         private int mana_total;
+        private int cur_mana;
         private RectTransform rect_transform;
 
         #endregion
@@ -57,6 +60,7 @@ namespace UI
         protected void Start()
         {
             // Setup health bar
+            health_segments = new List<GameObject>();
             health_total = character_stats.health.GetValue();
             for (int i = 0; i < health_total; i++)
             {
@@ -76,9 +80,11 @@ namespace UI
                 segment.transform.SetParent(fill.transform);
                 rect_transform = fill.GetComponent<RectTransform>();
                 rect_transform.anchoredPosition = new Vector3(Constants.HUD_X_OFFSET + i * Constants.HP_SPACING, Constants.HP_Y_OFFSET, 0);
+                health_segments.Add(fill);
             }
 
             // Setup mana bar
+            mana_segments = new List<GameObject>();
             mana_total = character_stats.mana.GetValue();
             for (int i = 0; i < mana_total; i++)
             {
@@ -100,12 +106,46 @@ namespace UI
                 segment.transform.SetParent(fill.transform);
                 rect_transform = fill.GetComponent<RectTransform>();
                 rect_transform.anchoredPosition = new Vector3(Constants.HUD_X_OFFSET + i * Constants.MANA_SPACING, Constants.MANA_Y_OFFSET, 0);
+                mana_segments.Add(fill);
             }
         }
 
         protected void Update()
         {
-            
+            // Update health bar
+            cur_health = character_stats.health.GetCurValue();
+            for (int i = 0; i < health_segments.Count; i++)
+            {
+                Image img;
+                img = health_segments[i].GetComponent<Image>();
+                Color temp_color = img.color;
+                if (i < cur_health)
+                {
+                    temp_color.a = 1f;
+                }
+                else
+                {
+                    temp_color.a = 0f;
+                }
+                img.color = temp_color;
+            }
+            // Update mana bar
+            cur_mana = character_stats.mana.GetCurValue();
+            for (int i = 0; i < mana_segments.Count; i++)
+            {
+                Image img;
+                img = mana_segments[i].GetComponent<Image>();
+                Color temp_color = img.color;
+                if (i < cur_mana)
+                {
+                    temp_color.a = 1f;
+                }
+                else
+                {
+                    temp_color.a = 0f;
+                }
+                img.color = temp_color;
+            }
         }
 
         #endregion
