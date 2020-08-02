@@ -33,7 +33,7 @@ namespace Utilities
 
         #region World Settings
 
-        public static float MANA_GAIN_RATE= 1; // per second
+        public static float MANA_GAIN_RATE = 1f; // seconds / 1 mana
 
         #endregion
 
