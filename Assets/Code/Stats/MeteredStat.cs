@@ -38,6 +38,13 @@ namespace Stats
             modifiers = new List<Modifier>();
         }
 
+        public MeteredStat(float base_value, int cur_value)
+        {
+            this.base_value = base_value;
+            this.cur_value = cur_value;
+            modifiers = new List<Modifier>();
+        }
+
         #endregion
 
 

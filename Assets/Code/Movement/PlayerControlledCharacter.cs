@@ -70,7 +70,7 @@ namespace Movement
                 {
                     movement.z = movement.z < 0 ? movement.z : 0;
                 }
-                if (!Physics.Raycast(transform.position - new Vector3(-0.75f, 0f, 0f), facing_dir, 2))
+                if (!Physics.Raycast(transform.position - new Vector3(-0.75f, 0f, 0f), facing_dir, 1))
                 {
                     movement.x = movement.x < 0 ? movement.x : 0;
                 }

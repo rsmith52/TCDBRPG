@@ -22,11 +22,11 @@ namespace Stats
 
 
         #region MeteredStats
-        /*
+
         [Header("Metered Stats")]
-        public MeteredStat health;
-        public MeteredStat mana;
-        */
+        public MeteredStat health = new MeteredStat(Settings.BASE_HEALTH, Settings.BASE_HEALTH);
+        public MeteredStat mana = new MeteredStat(Settings.BASE_MANA, 0);
+
         #endregion
 
     }

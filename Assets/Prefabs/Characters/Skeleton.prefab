@@ -234,6 +234,12 @@ MonoBehaviour:
     base_value: 3
   jump_force:
     base_value: 6.5
+  health:
+    base_value: 10
+    cur_value: 10
+  mana:
+    base_value: 10
+    cur_value: 0
 --- !u!114 &5960320349519636945
 MonoBehaviour:
   m_ObjectHideFlags: 0

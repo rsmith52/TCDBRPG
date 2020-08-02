@@ -23,5 +23,15 @@ namespace Utilities
 
         #endregion
 
+
+        #region UI
+
+        public static readonly int HUD_X_OFFSET = 75;
+        public static readonly int HP_Y_OFFSET = -75;
+        public static readonly int HP_SPACING = 60;
+        public static readonly int MANA_Y_OFFSET = -150;
+        public static readonly int MANA_SPACING = 50;
+        #endregion
+
     }
 }
