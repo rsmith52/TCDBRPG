@@ -30,5 +30,12 @@ namespace Utilities
 
         #endregion
 
+
+        #region World Settings
+
+        public static float MANA_GAIN_RATE= 1; // per second
+
+        #endregion
+
     }
 }

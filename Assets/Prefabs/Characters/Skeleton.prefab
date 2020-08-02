@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6621194319274930793}
   - component: {fileID: 6621194319274930799}
   - component: {fileID: 6621194319274930792}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 6071996144215897450}
   - component: {fileID: 3114573448023479975}
   - component: {fileID: 5960320349519636945}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Skeleton
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -230,6 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27cd9d7c66ef140a5b40207868c22c5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Skeleton
   speed:
     base_value: 3
   jump_force:

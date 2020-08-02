@@ -31,6 +31,7 @@ namespace Utilities
         public static readonly int HP_SPACING = 60;
         public static readonly int MANA_Y_OFFSET = -150;
         public static readonly int MANA_SPACING = 50;
+
         #endregion
 
     }

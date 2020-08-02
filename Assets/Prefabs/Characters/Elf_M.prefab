@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5872152338180630613}
   - component: {fileID: 5872152338180630612}
   - component: {fileID: 5872152338180630614}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 395493472697126487}
   - component: {fileID: 6876542499525129895}
   - component: {fileID: 5872152340056195762}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Elf_M
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -230,6 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27cd9d7c66ef140a5b40207868c22c5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Elf Male
   speed:
     base_value: 3
   jump_force:

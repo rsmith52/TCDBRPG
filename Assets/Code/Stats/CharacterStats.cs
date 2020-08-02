@@ -10,6 +10,13 @@ namespace Stats
 {
     public class CharacterStats : MonoBehaviour
     {
+        #region General Info
+
+        public new string name = "Name";
+
+        #endregion
+
+
         #region Stats
 
         [Header("Stats")]
@@ -26,6 +33,7 @@ namespace Stats
         [Header("Metered Stats")]
         public MeteredStat health = new MeteredStat(Settings.BASE_HEALTH, Settings.BASE_HEALTH);
         public MeteredStat mana = new MeteredStat(Settings.BASE_MANA, 0);
+        public float mana_time { get; set; }
 
         #endregion
 
