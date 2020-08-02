@@ -25,7 +25,8 @@ namespace World
 
         #region Fields
 
-        public List<Collider> characters;
+        protected List<Collider> characters;
+        protected float ring_size;
 
         #endregion
 
@@ -46,8 +47,15 @@ namespace World
                 GameObject ring = obj.transform.Find(Constants.MANA_RING_NAME).gameObject;
 
                 // Update mana ring size
-                float size = (1f - (Time.time - stats.mana_time)) * 10f;
-                ring.transform.localScale = new Vector3(size, size, 0);
+                if (stats.mana.GetCurValue() != stats.mana.GetValue())
+                {
+                    ring_size = (1f - (Time.time - stats.mana_time)) * 10f;
+                }
+                else
+                {
+                    ring_size = 0f;
+                }
+                ring.transform.localScale = new Vector3(ring_size, ring_size, 0);
 
                 // Add mana if enough time has passed
                 if (Time.time - stats.mana_time >= Settings.MANA_GAIN_RATE)
