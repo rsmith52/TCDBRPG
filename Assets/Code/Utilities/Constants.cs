@@ -34,5 +34,12 @@ namespace Utilities
 
         #endregion
 
+
+        #region World
+
+        public static readonly string MANA_RING_NAME = "Mana Ring(Clone)";
+
+        #endregion
+
     }
 }

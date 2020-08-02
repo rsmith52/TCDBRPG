@@ -17,6 +17,9 @@ namespace World
         [SerializeField]
         protected new Collider collider;
 
+        [SerializeField]
+        protected GameObject mana_ring;
+
         #endregion
 
 
@@ -40,6 +43,13 @@ namespace World
             {
                 GameObject obj = character.gameObject;
                 CharacterStats stats = obj.GetComponent<CharacterStats>();
+                GameObject ring = obj.transform.Find(Constants.MANA_RING_NAME).gameObject;
+
+                // Update mana ring size
+                float size = (1f - (Time.time - stats.mana_time)) * 10f;
+                ring.transform.localScale = new Vector3(size, size, 0);
+
+                // Add mana if enough time has passed
                 if (Time.time - stats.mana_time >= Settings.MANA_GAIN_RATE)
                 {
                     stats.mana.ChangeCurValue(1);
@@ -56,6 +66,7 @@ namespace World
             {
                 characters.Add(other);
                 stats.mana_time = Time.time;
+                GameObject ring = Instantiate(mana_ring, obj.transform);
             }
         }
 
@@ -67,6 +78,8 @@ namespace World
             {
                 characters.Remove(other);
                 stats.mana_time = 0f;
+                GameObject ring = obj.transform.Find(Constants.MANA_RING_NAME).gameObject;
+                GameObject.Destroy(ring);
             }
         }
 
