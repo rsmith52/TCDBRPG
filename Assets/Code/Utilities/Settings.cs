@@ -17,6 +17,8 @@ namespace Utilities
         #region Deck Settings
 
         public static readonly int DECK_SIZE = 30;
+        public static readonly int HAND_SIZE = 6;
+        public static readonly float SHUFFLE_TIME = 1f; // seconds
 
         #endregion
 
@@ -33,7 +35,7 @@ namespace Utilities
 
         #region World Settings
 
-        public static float MANA_GAIN_RATE = 1f; // seconds / 1 mana
+        public static float MANA_GAIN_RATE = 2.5f; // seconds per 1 mana
 
         #endregion
 

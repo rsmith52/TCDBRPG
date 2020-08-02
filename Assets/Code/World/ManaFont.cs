@@ -49,7 +49,7 @@ namespace World
                 // Update mana ring size
                 if (stats.mana.GetCurValue() != stats.mana.GetValue())
                 {
-                    ring_size = (1f - (Time.time - stats.mana_time)) * 10f;
+                    ring_size = (Settings.MANA_GAIN_RATE - (Time.time - stats.mana_time)) * Constants.MANA_RING_SIZE / Settings.MANA_GAIN_RATE;
                 }
                 else
                 {
@@ -70,7 +70,7 @@ namespace World
         {
             GameObject obj = other.gameObject;
             CharacterStats stats = obj.GetComponent<CharacterStats>();
-            if (stats != null && !characters.Contains(other))
+            if (stats != null && !characters.Contains(other) && obj.layer == Constants.PLAYER_LAYER)
             {
                 characters.Add(other);
                 stats.mana_time = Time.time;
@@ -82,7 +82,7 @@ namespace World
         {
             GameObject obj = other.gameObject;
             CharacterStats stats = obj.GetComponent<CharacterStats>();
-            if (stats != null)
+            if (stats != null && obj.layer == Constants.PLAYER_LAYER)
             {
                 characters.Remove(other);
                 stats.mana_time = 0f;

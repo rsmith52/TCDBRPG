@@ -8,6 +8,23 @@ namespace Utilities
 {
     public class Constants
     {
+        #region AI
+
+        public static readonly float WAYPOINT_DISTANCE = 1f;
+        public static readonly float REPATH_RATE = 0.5f;
+
+        #endregion
+
+
+        #region Layers
+
+        public static readonly int PLAYER_LAYER = 8;
+        public static readonly int ENEMY_LAYER = 9;
+        public static readonly int ALLY_LAYER = 13;
+
+        #endregion
+
+
         #region Movement
 
         public static readonly int WALK_PROPERTY = Animator.StringToHash("Walk");
@@ -31,6 +48,7 @@ namespace Utilities
         public static readonly int HP_SPACING = 60;
         public static readonly int MANA_Y_OFFSET = -150;
         public static readonly int MANA_SPACING = 50;
+        public static readonly float MINI_HEALTH_BAR_SIZE = 1.5f;
 
         #endregion
 
@@ -38,6 +56,7 @@ namespace Utilities
         #region World
 
         public static readonly string MANA_RING_NAME = "Mana Ring(Clone)";
+        public static readonly float MANA_RING_SIZE = 12f;
 
         #endregion
 

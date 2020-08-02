@@ -22,10 +22,10 @@ namespace Movement
         protected Transform target;
 
         [SerializeField]
-        protected float next_waypoint_distance = 1f;
+        protected float next_waypoint_distance = Constants.WAYPOINT_DISTANCE;
 
         [SerializeField]
-        protected float repath_rate = 0.5f;
+        protected float repath_rate = Constants.REPATH_RATE;
 
         [SerializeField]
         protected float wait_before_start = 0;
