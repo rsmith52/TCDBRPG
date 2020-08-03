@@ -328,15 +328,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Skeleton
+  character_race: {fileID: 11400000, guid: ba62b6aa12238410fb0bbc499a9ab6f5, type: 2}
+  character_class: {fileID: 11400000, guid: 2a250393bbb3e49c5b806233df426d71, type: 2}
   speed:
-    base_value: 3
+    base_value: 0
   jump_force:
     base_value: 6.5
   health:
-    base_value: 10
-    cur_value: 10
+    base_value: 0
+    cur_value: 0
   mana:
-    base_value: 10
+    base_value: 0
     cur_value: 0
 --- !u!114 &5960320349519636945
 MonoBehaviour:
@@ -345,7 +347,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6621194320900869246}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 61885b1fdb1f94e568869315a070f7dc, type: 3}
   m_Name: 

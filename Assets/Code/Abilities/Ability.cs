@@ -16,8 +16,6 @@ namespace Abilities
         Self,
         Direction,
         Area,
-        Enemy,
-        Ally,
         None
     };
 
@@ -32,7 +30,7 @@ namespace Abilities
     #endregion
 
 
-    [CreateAssetMenu(fileName = "Ability", menuName = "Data/Ability", order = 3)]
+    [CreateAssetMenu(fileName = "Ability", menuName = "Data/Ability", order = 4)]
     public class Ability : ScriptableObject
     {
         #region ScriptableObject

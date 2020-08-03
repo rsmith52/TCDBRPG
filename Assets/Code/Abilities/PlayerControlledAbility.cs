@@ -11,22 +11,12 @@ namespace Abilities
     {
         #region MonoBehavior
 
-        protected override Transform TargetAlly()
-        {
-            throw new System.NotImplementedException();
-        }
-
         protected override Transform TargetArea()
         {
             throw new System.NotImplementedException();
         }
 
         protected override Transform TargetDirection()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected override Transform TargetEnemy()
         {
             throw new System.NotImplementedException();
         }

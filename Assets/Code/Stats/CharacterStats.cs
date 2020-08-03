@@ -18,6 +18,9 @@ namespace Stats
         protected new string name = "Name";
 
         [SerializeField]
+        protected Race character_race = null;
+
+        [SerializeField]
         protected Class character_class = null;
 
         #endregion
@@ -26,7 +29,7 @@ namespace Stats
         #region Stats
 
         [Header("Stats")]
-        public Stat speed = new Stat(Settings.BASE_SPEED);
+        public Stat speed;
 
         [HideInInspector]
         public Stat jump_force = new Stat(Settings.BASE_JUMP);
@@ -37,9 +40,23 @@ namespace Stats
         #region MeteredStats
 
         [Header("Metered Stats")]
-        public MeteredStat health = new MeteredStat(Settings.BASE_HEALTH, Settings.BASE_HEALTH);
-        public MeteredStat mana = new MeteredStat(Settings.BASE_MANA, 0);
+        public MeteredStat health;
+        public MeteredStat mana;
         public float mana_time { get; set; }
+
+        #endregion
+
+
+        #region MonoBehavior
+
+        private void Start()
+        {
+            // Set stats
+            speed = character_race.speed;
+
+            health = new MeteredStat(character_race.health.GetValue(), character_race.health.GetCurValue());
+            mana = new MeteredStat(character_race.mana.GetValue(), character_race.mana.GetCurValue());
+        }
 
         #endregion
 

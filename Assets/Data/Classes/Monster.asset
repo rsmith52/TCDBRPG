@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Monster
   description: AI controlled creatures that inhabit the world.
-  icon: {fileID: 21300000, guid: 271cdc63afc5e4cd993818c16d4f267f, type: 3}
-  role: 5
+  icon: {fileID: 0}
   class_basic: {fileID: 0}
   class_special: {fileID: 0}

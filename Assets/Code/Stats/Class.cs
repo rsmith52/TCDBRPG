@@ -9,21 +9,10 @@ using Cards;
 namespace Stats
 {
     #region Enums
-
-    public enum Role
-    {
-        Tank,
-        Damage,
-        Speed,
-        Caster,
-        Support,
-        Special
-    };
-
     #endregion
 
 
-    [CreateAssetMenu(fileName = "Class", menuName = "Data/Class", order = 1)]
+    [CreateAssetMenu(fileName = "Class", menuName = "Data/Class", order = 2)]
     public class Class : ScriptableObject
     {
         #region ScriptableObject
@@ -36,8 +25,6 @@ namespace Stats
         protected string description = "Class Description";
         [SerializeField]
         protected Sprite icon = null;
-        [SerializeField]
-        protected Role role = Role.Tank;
 
         [Header("Abilities")]
         [SerializeField]

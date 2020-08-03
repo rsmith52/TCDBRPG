@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 6876542499525129895}
   - component: {fileID: 5872152340056195762}
   m_Layer: 13
-  m_Name: Elf_M
+  m_Name: Elf_M Ranger
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -327,16 +327,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27cd9d7c66ef140a5b40207868c22c5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Elf Male
+  name: Elf_M Ranger
+  character_race: {fileID: 11400000, guid: fae2a2e281b54416f85be0d48cdb6ff7, type: 2}
+  character_class: {fileID: 11400000, guid: 042793b8dcb0d466998b2ec751fe426b, type: 2}
   speed:
-    base_value: 3
+    base_value: 0
   jump_force:
     base_value: 6.5
   health:
-    base_value: 10
-    cur_value: 10
+    base_value: 0
+    cur_value: 0
   mana:
-    base_value: 10
+    base_value: 0
     cur_value: 0
 --- !u!114 &5872152340056195762
 MonoBehaviour:
@@ -345,7 +347,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5872152340056195761}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e08816ee6eaab44688d47d64ce8111a8, type: 3}
   m_Name: 

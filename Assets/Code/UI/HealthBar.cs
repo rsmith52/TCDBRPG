@@ -44,6 +44,7 @@ namespace UI
 
             stats = character.GetComponent<CharacterStats>();
             max_health = stats.health.GetValue();
+            health = stats.health.GetCurValue();
 
             // Start off not showing the bar
             shown = false;
@@ -52,6 +53,7 @@ namespace UI
 
         private void Update()
         {
+            max_health = stats.health.GetValue();
             health = stats.health.GetCurValue();
         }
 

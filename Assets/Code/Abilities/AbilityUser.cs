@@ -56,12 +56,6 @@ namespace Abilities
                 case Target.Area:
                     target = TargetArea();
                     break;
-                case Target.Enemy:
-                    target = TargetEnemy();
-                    break;
-                case Target.Ally:
-                    target = TargetAlly();
-                    break;
                 case Target.None:
                     target = null;
                     break;
@@ -74,8 +68,6 @@ namespace Abilities
         // These methods must be implemented by classes implementing this
         protected abstract Transform TargetDirection();
         protected abstract Transform TargetArea();
-        protected abstract Transform TargetEnemy();
-        protected abstract Transform TargetAlly();
 
         public void UseAbility(Ability ability, Transform target)
         {
