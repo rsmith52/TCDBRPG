@@ -58,7 +58,7 @@ namespace Abilities
         [SerializeField]
         protected TargetType target_type = TargetType.Self;
         [SerializeField]
-        protected int target_area = 0;
+        protected int area_size = 0;
         [SerializeField]
         protected float activation_time = 0;
         [SerializeField]

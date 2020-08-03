@@ -39,7 +39,7 @@ namespace Abilities
 
         protected virtual void Start()
         {
-            this.target_type = TargetType.None;
+            target_type = TargetType.None;
             target = null;
             state = State.Waiting;
         }
