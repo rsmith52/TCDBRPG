@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Utilities;
+using Cards;
 
 /*
  * This code defines the stats every character will have, split between

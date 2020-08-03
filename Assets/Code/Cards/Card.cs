@@ -21,21 +21,29 @@ namespace Cards
     #endregion
 
 
-    [CreateAssetMenu(fileName = "Card", menuName = "Data/Card", order = 1)]
+    [CreateAssetMenu(fileName = "Card", menuName = "Data/Card", order = 2)]
     public class Card : ScriptableObject
     {
         #region ScriptableObject
 
+        [Header("General")]
+        [SerializeField]
         protected new string name = "Card Name";
+        [SerializeField]
+        [TextArea]
         protected string description = "Card Description";
+        [SerializeField]
+        protected Rarity rarity = Rarity.Common;
+        [SerializeField]
         protected Class card_class = null;
+        [SerializeField]
         protected Sprite icon = null;
 
+        [Header("Mechanics")]
+        [SerializeField]
         protected int mana_cost = 0;
-        protected Rarity rarity = Rarity.Common;
-        protected int value = 0;
-
-        protected CardAbility ability = null;
+        [SerializeField]
+        protected Ability ability = null;
 
         #endregion
 
