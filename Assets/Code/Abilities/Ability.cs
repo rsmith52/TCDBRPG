@@ -2,11 +2,23 @@
 
 /*
  * This code defines the base class for all abilities, including those activated
- * by cards, class ability, and enemies.
+ * by cards, class ability, and monsters.
  */
 
 namespace Abilities
 {
+    #region Enums
+
+    public enum Target
+    {
+        Self,
+        Single,
+        Area
+    }
+
+    #endregion
+
+
     public abstract class Ability : ScriptableObject
     {
         #region ScriptableObject

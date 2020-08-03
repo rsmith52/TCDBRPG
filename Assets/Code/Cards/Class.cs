@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Abilities;
 
 /*
  * This code defines a character class.
@@ -30,6 +31,8 @@ namespace Cards
         protected Sprite img = null;
 
         protected Role role = Role.Tank;
+
+        protected ClassAbility ability = null;
 
         #endregion
 

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Abilities;
 
 /*
  * This code contains some general card metadata, and creates the base Card
@@ -27,11 +28,14 @@ namespace Cards
 
         protected new string name = "Card Name";
         protected string description = "Card Description";
+        protected Class card_class = null;
         protected Sprite icon = null;
 
         protected int mana_cost = 0;
         protected Rarity rarity = Rarity.Common;
         protected int value = 0;
+
+        protected CardAbility ability = null;
 
         #endregion
 
