@@ -25,14 +25,6 @@ namespace Abilities
         None
     };
 
-    public enum TargetArea
-    {
-        Small,
-        Medium,
-        Large,
-        None
-    }
-
     public enum Weapon
     {
         Sword,
@@ -66,7 +58,7 @@ namespace Abilities
         [SerializeField]
         protected TargetType target_type = TargetType.Self;
         [SerializeField]
-        protected TargetArea target_area = TargetArea.Medium;
+        protected int target_area = 0;
         [SerializeField]
         protected float activation_time = 0;
         [SerializeField]

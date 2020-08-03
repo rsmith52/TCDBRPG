@@ -44,34 +44,13 @@ namespace Abilities
             state = State.Waiting;
         }
 
-        public void AimAbility(TargetType target_type, float range)
+        public void AimAbility()
         {
-            state = State.Targeting;
-            this.target_type = target_type;
-            switch (target_type)
-            {
-                case TargetType.Self:
-                    target = transform;
-                    break;
-                case TargetType.Immediate:
-                    target = SetTarget(target_type, range, false);
-                    break;
-                case TargetType.Projectile:
-                    target = SetTarget(target_type, range, false);
-                    break;
-                case TargetType.None:
-                    target = null;
-                    break;
-                default:
-                    // Enemy, Ally
-                    // Line, Cone, Circle, Square
-                    target = SetTarget(target_type, range, true);
-                    break;
-            }
+            return;
         }
 
         // These methods must be implemented by classes implementing this
-        protected abstract Transform SetTarget(TargetType target_type, float range, bool show_area);
+        protected abstract Transform SetTarget();
 
         public void UseAbility(Ability ability, Transform target)
         {

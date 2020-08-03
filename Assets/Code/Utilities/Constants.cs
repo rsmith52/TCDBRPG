@@ -57,7 +57,7 @@ namespace Utilities
         public static readonly float HEALTH_BAR_HIDE_TIME = 2.5f; // seconds
 
         // Targetting
-        public static readonly float TARGET_OFF_GROUND_DIST = 0.05f;
+        public static readonly float TARGET_OFF_GROUND_DIST = 0.01f;
         public static readonly Color TARGET_VALID_COLOR = new Color(255, 255, 255, 55f/255f);
         public static readonly Color TARGET_INVALID_COLOR = new Color(255, 0, 0, 55f/255f);
 

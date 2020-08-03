@@ -57,7 +57,7 @@ namespace UI
 
         #region MonoBehavior
 
-        private void Start()
+        public void Start()
         {
             // Setup health bar
             health_segments = new List<GameObject>();
@@ -114,6 +114,16 @@ namespace UI
         {
             cur_health = character_stats.health.GetCurValue();
             cur_mana = character_stats.mana.GetCurValue();
+
+            // Redraw bars if total amounts change
+            if (health_total != character_stats.health.GetValue())
+            {
+                RedrawHealth();
+            }
+            if (mana_total != character_stats.mana.GetValue())
+            {
+                RedrawMana();
+            }
         }
 
         private void FixedUpdate()
@@ -150,6 +160,74 @@ namespace UI
                     temp_color.a = 0f;
                 }
                 img.color = temp_color;
+            }
+        }
+
+        private void RedrawHealth()
+        {
+            // Destroy existing health bar
+            for (int i = 0; i < health_segments.Count; i++)
+            {
+                GameObject.Destroy(health_segments[i]);
+            }
+
+            // Setup health bar
+            health_segments = new List<GameObject>();
+            health_total = character_stats.health.GetValue();
+            for (int i = 0; i < health_total; i++)
+            {
+                GameObject segment;
+                GameObject fill;
+                if (i == health_total - 1)
+                {
+                    segment = Instantiate(health_bar_cap);
+                    fill = Instantiate(health_bar_cap_fill);
+                }
+                else
+                {
+                    segment = Instantiate(health_bar_segment);
+                    fill = Instantiate(health_bar_fill);
+                }
+                fill.transform.SetParent(transform);
+                segment.transform.SetParent(fill.transform);
+                rect_transform = fill.GetComponent<RectTransform>();
+                rect_transform.anchoredPosition = new Vector3(Constants.HUD_X_OFFSET + i * Constants.HP_SPACING, Constants.HP_Y_OFFSET, 0);
+                health_segments.Add(fill);
+            }
+        }
+
+        private void RedrawMana()
+        {
+            // Destroy existing mana bar
+            for (int i = 0; i < mana_segments.Count; i++)
+            {
+                GameObject.Destroy(mana_segments[i]);
+            }
+
+            // Setup mana bar
+            mana_segments = new List<GameObject>();
+            mana_total = character_stats.mana.GetValue();
+            for (int i = 0; i < mana_total; i++)
+            {
+                GameObject segment;
+                GameObject fill;
+                if (i == mana_total - 1)
+                {
+                    segment = Instantiate(mana_bar_cap);
+                    fill = Instantiate(mana_bar_cap_fill);
+                }
+                else
+                {
+                    segment = Instantiate(mana_bar_segment);
+                    fill = Instantiate(mana_bar_fill);
+                }
+                fill.transform.SetParent(transform);
+                segment.transform.SetParent(fill.transform);
+                fill.transform.SetParent(transform);
+                segment.transform.SetParent(fill.transform);
+                rect_transform = fill.GetComponent<RectTransform>();
+                rect_transform.anchoredPosition = new Vector3(Constants.HUD_X_OFFSET + i * Constants.MANA_SPACING, Constants.MANA_Y_OFFSET, 0);
+                mana_segments.Add(fill);
             }
         }
 

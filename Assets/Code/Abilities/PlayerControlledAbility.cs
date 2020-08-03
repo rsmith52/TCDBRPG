@@ -14,25 +14,25 @@ namespace Abilities
 
         [Header("Relations")]
         [SerializeField]
-        protected GameObject line = null;
+        protected GameObject target_view;
 
-        [SerializeField]
-        protected GameObject cone = null;
+        #endregion
 
-        [SerializeField]
-        protected GameObject circle = null;
 
-        [SerializeField]
-        protected GameObject square = null;
+        #region Temporary Settings
+
+        [Header("Temp Settings")]
+        public TargetType ability_target_type = TargetType.Square;
+        public float ability_range = 5f;
+        public bool ability_show_area = true;
+        public int ability_area = 3;
 
         #endregion
 
 
         #region Fields
 
-        public Vector3 surface_hit;
-        private GameObject target_view;
-        private SpriteRenderer target_view_renderer;
+        private Vector3 surface_hit;
         private RaycastHit hit;
         private float range;
         private bool in_range;
@@ -47,11 +47,9 @@ namespace Abilities
         {
             base.Start();
 
-            range = 5f;
-            show_area = true;
-            target_view = square;
-            target_view_renderer = target_view.GetComponent<SpriteRenderer>();
-            show_area = true;
+            SetupTargetView(ability_target_type, ability_area);
+            range = ability_range;
+            show_area = ability_show_area;
         }
 
         private void Update()
@@ -79,7 +77,7 @@ namespace Abilities
                 target_view.transform.localPosition = new Vector3(x_pos, y_pos, z_pos);
 
                 // Set target view color
-                target_view_renderer.color = in_range ? Constants.TARGET_VALID_COLOR : Constants.TARGET_INVALID_COLOR;
+                // target_view_renderer.color = in_range ? Constants.TARGET_VALID_COLOR : Constants.TARGET_INVALID_COLOR;
 
                 // Set scale
                 if (target_type == TargetType.Circle)
@@ -93,30 +91,18 @@ namespace Abilities
             }
         }
 
-        protected override Transform SetTarget(TargetType target_type, float range, bool show_area)
+        private void SetupTargetView(TargetType target_type, int area)
         {
-            this.range = range;
-            this.show_area = show_area;
 
-            switch (target_type)
-            {
-                case TargetType.Circle:
-                    target_view = circle;
-                    break;
-                case TargetType.Square:
-                    target_view = square;
-                    break;
-                default:
-                    break;
-            }
-            target_view_renderer = target_view.GetComponent<SpriteRenderer>();
+        }
 
-            while (target == null)
-            {
-                // Loop forever until a target has been set
-            }
+        protected override Transform SetTarget()
+        {
+            // Setup target view
+            // Loop until target selected
+            // Return transform of that target
 
-            return target;
+            return transform;
         }
 
         #endregion
