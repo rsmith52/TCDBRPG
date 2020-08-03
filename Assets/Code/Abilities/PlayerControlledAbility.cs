@@ -11,12 +11,17 @@ namespace Abilities
     {
         #region MonoBehavior
 
-        protected override Transform TargetArea()
+        private void Update()
         {
-            throw new System.NotImplementedException();
+            
         }
 
-        protected override Transform TargetDirection()
+        private void FixedUpdate()
+        {
+            
+        }
+
+        protected override Transform SetTarget(TargetType target_type, bool show_area)
         {
             throw new System.NotImplementedException();
         }

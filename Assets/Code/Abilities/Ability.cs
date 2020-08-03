@@ -11,11 +11,15 @@ namespace Abilities
 {
     #region Enums
 
-    public enum Target
+    public enum TargetType
     {
         Self,
-        Direction,
-        Area,
+        Immediate,
+        Projectile,
+        Line,
+        Cone,
+        Circle,
+        Square,
         None
     };
 
@@ -50,7 +54,7 @@ namespace Abilities
         [SerializeField]
         protected int mana_cost = 0;
         [SerializeField]
-        protected Target target_type = Target.Self;
+        protected TargetType target_type = TargetType.Self;
         [SerializeField]
         protected float activation_time = 0;
         [SerializeField]

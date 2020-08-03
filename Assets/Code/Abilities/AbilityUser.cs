@@ -42,32 +42,32 @@ namespace Abilities
             target = null;
         }
 
-        public void AimAbility(Target target_type)
+        public void AimAbility(TargetType target_type)
         {
             state = State.Targeting;
             switch (target_type)
             {
-                case Target.Self:
+                case TargetType.Self:
                     target = transform;
                     break;
-                case Target.Direction:
-                    target = TargetDirection();
+                case TargetType.Immediate:
+                    target = SetTarget(target_type, false);
                     break;
-                case Target.Area:
-                    target = TargetArea();
+                case TargetType.Projectile:
+                    target = SetTarget(target_type, false);
                     break;
-                case Target.None:
+                case TargetType.None:
                     target = null;
                     break;
                 default:
-                    target = null;
+                    // Line, Cone, Circle, Square
+                    target = SetTarget(target_type, true);
                     break;
             }
         }
 
         // These methods must be implemented by classes implementing this
-        protected abstract Transform TargetDirection();
-        protected abstract Transform TargetArea();
+        protected abstract Transform SetTarget(TargetType target_type, bool show_area);
 
         public void UseAbility(Ability ability, Transform target)
         {

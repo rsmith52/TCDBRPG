@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ranger
   m_EditorClassIdentifier: 
   name: Ranger
-  description: A nature tied bow user.
+  description: A nature loving bow user.
   icon: {fileID: 0}
   class_basic: {fileID: 0}
   class_special: {fileID: 0}
