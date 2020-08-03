@@ -26,13 +26,21 @@ namespace Cards
     {
         #region ScriptableObject
 
+        [SerializeField]
         protected new string name = "Class Name";
+
+        [SerializeField]
+        [TextArea]
         protected string description = "Class Description";
+
+        [SerializeField]
         protected Sprite img = null;
 
+        [SerializeField]
         protected Role role = Role.Tank;
 
-        protected ClassAbility ability = null;
+        [SerializeField]
+        protected ClassAbility class_ability = null;
 
         #endregion
 
