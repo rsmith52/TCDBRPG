@@ -25,6 +25,14 @@ namespace Abilities
         None
     };
 
+    public enum TargetArea
+    {
+        Small,
+        Medium,
+        Large,
+        None
+    }
+
     public enum Weapon
     {
         Sword,
@@ -58,13 +66,13 @@ namespace Abilities
         [SerializeField]
         protected TargetType target_type = TargetType.Self;
         [SerializeField]
+        protected TargetArea target_area = TargetArea.Medium;
+        [SerializeField]
         protected float activation_time = 0;
         [SerializeField]
         protected float damage = 0;
         [SerializeField]
         protected float range = 0;
-        [SerializeField]
-        protected float area_size = 0; // radius or distance to edge from center
 
         [Header("Relations")]
         [SerializeField]
