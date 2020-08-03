@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Cards;
 
 /*
@@ -12,11 +10,10 @@ namespace Abilities
 {
     public enum State
     {
+        Waiting,
         Targeting,
-        Activating,
-        Occuring,
-        Finished
-    }
+        Activating
+    };
 
     public abstract class AbilityUser : MonoBehaviour
     {
@@ -31,32 +28,73 @@ namespace Abilities
 
         #region Fields
 
-        private State state;
+        public State state;
+        public Transform target;
 
         #endregion
 
 
         #region MonoBehavior
 
-        protected virtual Transform SetTarget()
+        private void Start()
         {
-            return transform;
+            state = State.Waiting;
+            target = null;
         }
 
-        protected virtual GameObject SetTargetCharacter()
+        public void AimAbility(Target target_type)
         {
-            return gameObject;
+            state = State.Targeting;
+            switch (target_type)
+            {
+                case Target.Self:
+                    target = transform;
+                    break;
+                case Target.Direction:
+                    target = TargetDirection();
+                    break;
+                case Target.Area:
+                    target = TargetArea();
+                    break;
+                case Target.Enemy:
+                    target = TargetEnemy();
+                    break;
+                case Target.Ally:
+                    target = TargetAlly();
+                    break;
+                case Target.None:
+                    target = null;
+                    break;
+                default:
+                    target = null;
+                    break;
+            }
         }
 
-        public void UseAbility()
+        // These methods must be implemented by classes implementing this
+        protected abstract Transform TargetDirection();
+        protected abstract Transform TargetArea();
+        protected abstract Transform TargetEnemy();
+        protected abstract Transform TargetAlly();
+
+        public void UseAbility(Ability ability, Transform target)
         {
-            // Get Target (targeting)
+            state = State.Activating;
+            // Show animation on user
+            // Wait activation time
+            // Remove mana
 
-            // Show animation on user (Activating)
+            state = State.Waiting; // This allows other abilities to be used while the first continues to resolve
+            // Perform ability
+            // Determine results
+            // Show animation on target
+            // Apply results
+        }
 
-            // Perform ability (Occuring)
-
-            // Show animation on target (Finished)
+        public void Cancel()
+        {
+            target = null;
+            state = State.Waiting;
         }
 
         #endregion

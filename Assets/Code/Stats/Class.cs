@@ -18,7 +18,7 @@ namespace Stats
         Caster,
         Support,
         Special
-    }
+    };
 
     #endregion
 

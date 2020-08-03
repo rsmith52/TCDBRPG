@@ -16,9 +16,10 @@ namespace Abilities
         Self,
         Direction,
         Area,
-        Single_Ally,
-        Single_Enemy
-    }
+        Enemy,
+        Ally,
+        None
+    };
 
     public enum Weapon
     {
@@ -26,7 +27,7 @@ namespace Abilities
         Bow,
         Dagger,
         Staff
-    }
+    };
 
     #endregion
 
@@ -51,7 +52,7 @@ namespace Abilities
         [SerializeField]
         protected int mana_cost = 0;
         [SerializeField]
-        protected Target target = Target.Self;
+        protected Target target_type = Target.Self;
         [SerializeField]
         protected float activation_time = 0;
         [SerializeField]
