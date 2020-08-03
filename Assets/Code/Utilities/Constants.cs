@@ -21,6 +21,8 @@ namespace Utilities
         public static readonly int PLAYER_LAYER = 8;
         public static readonly int ENEMY_LAYER = 9;
         public static readonly int ALLY_LAYER = 13;
+        public static readonly int GROUND_LAYER = 10;
+        public static readonly int OBJECT_LAYER = 11;
 
         #endregion
 
@@ -53,6 +55,9 @@ namespace Utilities
         // Health Bars
         public static readonly float HEALTH_BAR_SIZE = 1.5f;
         public static readonly float HEALTH_BAR_HIDE_TIME = 2.5f; // seconds
+
+        // Targetting
+        public static readonly float TARGET_OFF_GROUND_DIST = 0.05f;
 
         #endregion
 

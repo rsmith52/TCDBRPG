@@ -16,6 +16,8 @@ namespace Abilities
         Self,
         Immediate,
         Projectile,
+        Enemy,
+        Ally,
         Line,
         Cone,
         Circle,
@@ -61,6 +63,8 @@ namespace Abilities
         protected float damage = 0;
         [SerializeField]
         protected float range = 0;
+        [SerializeField]
+        protected float area_size = 0; // radius or distance to edge from center
 
         [Header("Relations")]
         [SerializeField]

@@ -60,6 +60,7 @@ namespace Abilities
                     target = null;
                     break;
                 default:
+                    // Enemy, Ally
                     // Line, Cone, Circle, Square
                     target = SetTarget(target_type, true);
                     break;
