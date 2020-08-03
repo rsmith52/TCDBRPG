@@ -51,7 +51,7 @@ namespace Movement
             dist_to_ground = collider.bounds.extents.y;
         }
 
-        protected void FixedUpdate()
+        private void FixedUpdate()
         {
             speed = character_stats.speed.GetValue();
             jump_force = character_stats.jump_force.GetValue();
@@ -72,7 +72,7 @@ namespace Movement
             }
         }
 
-        protected bool IsGrounded()
+        private bool IsGrounded()
         {
             return Physics.Raycast(transform.position, -Vector3.up, dist_to_ground + Constants.GROUND_DIST);
         }

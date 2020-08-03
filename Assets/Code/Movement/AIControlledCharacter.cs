@@ -47,7 +47,7 @@ namespace Movement
 
         #region MonoBehavior
 
-        public void Update()
+        private void Update()
         {
             if (Time.time > last_repath + repath_rate && seeker.IsDone())
             {

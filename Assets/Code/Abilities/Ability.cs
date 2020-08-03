@@ -53,6 +53,8 @@ namespace Abilities
         [SerializeField]
         protected Target target = Target.Self;
         [SerializeField]
+        protected float activation_time = 0;
+        [SerializeField]
         protected float damage = 0;
         [SerializeField]
         protected float range = 0;

@@ -10,7 +10,15 @@ using Cards;
 
 namespace Abilities
 {
-    public class AbilityUser : MonoBehaviour
+    public enum State
+    {
+        Targeting,
+        Activating,
+        Occuring,
+        Finished
+    }
+
+    public abstract class AbilityUser : MonoBehaviour
     {
         #region Inspector
 
@@ -22,14 +30,33 @@ namespace Abilities
 
 
         #region Fields
+
+        private State state;
+
         #endregion
 
 
         #region MonoBehavior
 
+        protected virtual Transform SetTarget()
+        {
+            return transform;
+        }
+
+        protected virtual GameObject SetTargetCharacter()
+        {
+            return gameObject;
+        }
+
         public void UseAbility()
         {
+            // Get Target (targeting)
 
+            // Show animation on user (Activating)
+
+            // Perform ability (Occuring)
+
+            // Show animation on target (Finished)
         }
 
         #endregion
