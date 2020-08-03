@@ -4,8 +4,8 @@ using Utilities;
 
 /* 
  * This code contains the basic information and setup needed for a character
- * that can move. Player controlled characters extend from this, and AI
- * controlled characters will also extend from this.
+ * that can move. Player controlled characters and AI controlled characters
+ * extend from this.
  */
 
 namespace Movement

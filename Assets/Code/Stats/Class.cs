@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using Abilities;
+using Cards;
 
 /*
  * This code defines a character class.
  */
 
-namespace Cards
+namespace Stats
 {
     #region Enums
 
@@ -15,7 +16,8 @@ namespace Cards
         Damage,
         Speed,
         Caster,
-        Support
+        Support,
+        Special
     }
 
     #endregion

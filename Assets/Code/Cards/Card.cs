@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Abilities;
+using Stats;
 
 /*
  * This code contains some general card metadata, and creates the base Card

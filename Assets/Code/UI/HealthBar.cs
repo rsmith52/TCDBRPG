@@ -53,6 +53,10 @@ namespace UI
         private void Update()
         {
             health = stats.health.GetCurValue();
+        }
+
+        private void FixedUpdate()
+        {
             // Only show bar once character has been damaged, then show it indefinitely
             if (health != max_health)
             {

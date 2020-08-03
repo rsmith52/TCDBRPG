@@ -57,7 +57,7 @@ namespace UI
 
         #region MonoBehavior
 
-        protected void Start()
+        private void Start()
         {
             // Setup health bar
             health_segments = new List<GameObject>();
@@ -110,10 +110,15 @@ namespace UI
             }
         }
 
-        protected void Update()
+        private void Update()
+        {
+            cur_health = character_stats.health.GetCurValue();
+            cur_mana = character_stats.mana.GetCurValue();
+        }
+
+        private void FixedUpdate()
         {
             // Update health bar
-            cur_health = character_stats.health.GetCurValue();
             for (int i = 0; i < health_segments.Count; i++)
             {
                 Image img;
@@ -129,8 +134,8 @@ namespace UI
                 }
                 img.color = temp_color;
             }
+
             // Update mana bar
-            cur_mana = character_stats.mana.GetCurValue();
             for (int i = 0; i < mana_segments.Count; i++)
             {
                 Image img;

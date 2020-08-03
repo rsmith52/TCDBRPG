@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Cards;
+using Stats;
 
 /*
  * This code defines abilities, including those activated
@@ -47,6 +48,8 @@ namespace Abilities
         protected Class ability_class = null;
 
         [Header("Mechanics")]
+        [SerializeField]
+        protected int mana_cost = 0;
         [SerializeField]
         protected Target target = Target.Self;
         [SerializeField]

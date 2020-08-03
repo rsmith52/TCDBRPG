@@ -13,7 +13,12 @@ namespace Stats
     {
         #region General Info
 
-        public new string name = "Name";
+        [Header("General")]
+        [SerializeField]
+        protected new string name = "Name";
+
+        [SerializeField]
+        protected Class character_class = null;
 
         #endregion
 
