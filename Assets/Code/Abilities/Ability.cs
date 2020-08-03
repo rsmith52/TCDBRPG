@@ -27,6 +27,8 @@ namespace Abilities
         protected string description = "Ability Description";
         protected Sprite icon = null;
 
+        protected Target target = Target.Single;
+
         #endregion
 
     }

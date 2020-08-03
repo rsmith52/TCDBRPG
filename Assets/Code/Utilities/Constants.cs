@@ -43,12 +43,16 @@ namespace Utilities
 
         #region UI
 
+        // HUD
         public static readonly int HUD_X_OFFSET = 75;
         public static readonly int HP_Y_OFFSET = -75;
         public static readonly int HP_SPACING = 60;
         public static readonly int MANA_Y_OFFSET = -150;
         public static readonly int MANA_SPACING = 50;
-        public static readonly float MINI_HEALTH_BAR_SIZE = 1.5f;
+
+        // Health Bars
+        public static readonly float HEALTH_BAR_SIZE = 1.5f;
+        public static readonly float HEALTH_BAR_HIDE_TIME = 2.5f; // seconds
 
         #endregion
 

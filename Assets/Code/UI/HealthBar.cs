@@ -26,6 +26,7 @@ namespace UI
         private int max_health;
         private int health;
         private float percent_full;
+        private float time_at_full;
         private bool shown;
 
         #endregion
@@ -56,11 +57,23 @@ namespace UI
             if (health != max_health)
             {
                 shown = true;
+                time_at_full = 0;
             }
             if (shown)
             {
                 percent_full = (float)health / (float)max_health;
-                transform.localScale = new Vector3(Constants.MINI_HEALTH_BAR_SIZE * percent_full, 0.25f, 1);
+                transform.localScale = new Vector3(Constants.HEALTH_BAR_SIZE * percent_full, 0.25f, 1);
+
+                // Hide after some time if health is full
+                if (health == max_health)
+                {
+                    time_at_full += Time.deltaTime;
+                    if (time_at_full >= Constants.HEALTH_BAR_HIDE_TIME)
+                    {
+                        shown = false;
+                        transform.localScale = new Vector3(0, 0, 0);
+                    }
+                }
             }
         }
 
