@@ -265,6 +265,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 182847e0a4c854e349c7b4ea26f8be26, type: 3}
+--- !u!212 &50327748 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5872152338180630612, guid: ec2fa5fe89e18498da940fa19d5d7e85,
+    type: 3}
+  m_PrefabInstance: {fileID: 1371270028}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &98658720 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4025704486191332, guid: 3a33ce58c20826a4ea7253f84444654b,
@@ -844,6 +850,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &517975480 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6621194319274930799, guid: d2320d9055bbf406597a23cc2747e267,
+    type: 3}
+  m_PrefabInstance: {fileID: 1720646955}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &601053544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -916,8 +928,19 @@ PrefabInstance:
       propertyPath: character
       value: 
       objectReference: {fileID: 1710362886}
+    - target: {fileID: 9114592757180133421, guid: 368505b57e0a8450d98922058de72f3e,
+        type: 3}
+      propertyPath: sprite_renderer
+      value: 
+      objectReference: {fileID: 50327748}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 368505b57e0a8450d98922058de72f3e, type: 3}
+--- !u!212 &677470446 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5477972067873314357, guid: bcc5aee580c584be9ae8a4a5d1d15162,
+    type: 3}
+  m_PrefabInstance: {fileID: 1225941600}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &731544900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1170,6 +1193,21 @@ PrefabInstance:
       propertyPath: character
       value: 
       objectReference: {fileID: 1439427644}
+    - target: {fileID: 9114592757180133421, guid: 368505b57e0a8450d98922058de72f3e,
+        type: 3}
+      propertyPath: sprite_renderer
+      value: 
+      objectReference: {fileID: 677470446}
+    - target: {fileID: 9114592757180133421, guid: 368505b57e0a8450d98922058de72f3e,
+        type: 3}
+      propertyPath: ground_layer.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114592757180133421, guid: 368505b57e0a8450d98922058de72f3e,
+        type: 3}
+      propertyPath: non_ground_layers.m_Bits
+      value: 15104
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 368505b57e0a8450d98922058de72f3e, type: 3}
 --- !u!1001 &1093109883
@@ -1764,6 +1802,11 @@ PrefabInstance:
       propertyPath: character
       value: 
       objectReference: {fileID: 966208947}
+    - target: {fileID: 9114592757180133421, guid: 368505b57e0a8450d98922058de72f3e,
+        type: 3}
+      propertyPath: sprite_renderer
+      value: 
+      objectReference: {fileID: 517975480}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 368505b57e0a8450d98922058de72f3e, type: 3}
 --- !u!1001 &1364633693

@@ -57,7 +57,7 @@ namespace Utilities
         public static readonly float HEALTH_BAR_HIDE_TIME = 2.5f; // seconds
 
         // Targetting
-        public static readonly float ARROW_DIST_OFFSET = 0.49f;
+        public static readonly float ARROW_DIST_OFFSET = -0.49f;
         public static readonly float ARROW_DIST_FROM_CHARACTER = 1.25f;
 
         public static readonly float TARGET_OFF_GROUND_DIST = 0.01f;
@@ -71,6 +71,7 @@ namespace Utilities
 
         public static readonly string MANA_RING_NAME = "Mana Ring(Clone)";
         public static readonly float MANA_RING_SIZE = 12f;
+        public static readonly float MANA_RING_OFFSET = -0.5f;
 
         #endregion
 

@@ -34,15 +34,9 @@ namespace Movement
             // Horizontal
             float inputX = 0;
             if (Input.GetKey(KeyCode.D))
-            {
                 inputX = 1;
-                sprite_renderer.flipX = false;
-            }
             else if (Input.GetKey(KeyCode.A))
-            {
                 inputX = -1;
-                sprite_renderer.flipX = true;
-            }
 
             // Jump
             jump_input = 0;

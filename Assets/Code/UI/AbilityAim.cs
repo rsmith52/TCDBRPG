@@ -17,6 +17,9 @@ namespace UI
         [SerializeField]
         protected GameObject character;
 
+        [SerializeField]
+        protected SpriteRenderer sprite_renderer;
+
         #endregion
 
 
@@ -24,6 +27,7 @@ namespace UI
 
         private RaycastHit hit;
         private Vector3 surface_hit;
+        private Vector3 player_pos;
         public Vector3 direction;
 
         #endregion
@@ -42,10 +46,11 @@ namespace UI
         {
             // Casts the ray and get the first game object hit
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit))
-                surface_hit = hit.point;
-                direction = (surface_hit - character.transform.position).normalized;
-            direction = new Vector3(direction.x, 0, direction.z);
+            Physics.Raycast(ray, out hit);
+            surface_hit = hit.point;
+            player_pos = character.transform.position + new Vector3(0, Constants.ARROW_DIST_OFFSET, Constants.ARROW_DIST_OFFSET);
+            direction = (surface_hit - player_pos);
+            direction = new Vector3(direction.x, 0, direction.z).normalized;
         }
 
         private void FixedUpdate()
@@ -53,18 +58,25 @@ namespace UI
             // Set position on circle
             transform.localPosition = new Vector3(
                 Constants.ARROW_DIST_FROM_CHARACTER * direction.x,
-                -1 * Constants.ARROW_DIST_OFFSET,
-                Constants.ARROW_DIST_FROM_CHARACTER * direction.z - 1 * Constants.ARROW_DIST_OFFSET);
+                Constants.ARROW_DIST_OFFSET,
+                Constants.ARROW_DIST_FROM_CHARACTER * direction.z + Constants.ARROW_DIST_OFFSET);
 
-            // Set rotation of pointer
+            // Set rotation of pointer and
+            // Flip character based on the direction fac
             if (direction.x == 0)
                 direction.x = 0.001f; // Account for divide by 0 errors
             if (direction.x <= 0)
+            {
                 transform.eulerAngles = new Vector3(90, 0,
                     -1 * (90 + (-1 * Mathf.Rad2Deg * Mathf.Atan(direction.z / direction.x))));
+                sprite_renderer.flipX = true;
+            }
             else
+            {
                 transform.eulerAngles = new Vector3(90, 0,
-                    90 + Mathf.Rad2Deg * Mathf.Atan(direction.z / direction.x));
+                     90 + Mathf.Rad2Deg * Mathf.Atan(direction.z / direction.x));
+                sprite_renderer.flipX = false;
+            }
         }
 
         #endregion
