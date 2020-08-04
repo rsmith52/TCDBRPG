@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using Abilities;
-using Cards;
 
 /*
  * This code defines a character class.
@@ -9,6 +8,15 @@ using Cards;
 namespace Stats
 {
     #region Enums
+
+    public enum Weapon
+    {
+        Sword,
+        Bow,
+        Dagger,
+        Staff
+    };
+
     #endregion
 
 
@@ -25,6 +33,8 @@ namespace Stats
         protected string description = "Class Description";
         [SerializeField]
         protected Sprite icon = null;
+        [SerializeField]
+        protected Weapon weapone = Weapon.Sword;
 
         [Header("Abilities")]
         [SerializeField]

@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using Cards;
 using Stats;
 
 /*
@@ -22,14 +21,6 @@ namespace Abilities
         Cone,
         Square,
         None
-    };
-
-    public enum Weapon
-    {
-        Sword,
-        Bow,
-        Dagger,
-        Staff
     };
 
     #endregion

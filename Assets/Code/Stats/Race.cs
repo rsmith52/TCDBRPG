@@ -2,7 +2,7 @@
 using Utilities;
 
 /*
- * This code defines a character class.
+ * This code defines a character race.
  */
 
 namespace Stats
