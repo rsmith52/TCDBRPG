@@ -42,40 +42,40 @@ namespace Abilities
 
         [Header("General")]
         [SerializeField]
-        protected new string name = "Ability Name";
+        public new string name = "Ability Name";
         [SerializeField]
         [TextArea]
-        protected string description = "Ability Description";
+        public string description = "Ability Description";
         [SerializeField]
-        protected Sprite icon = null;
+        public Sprite icon = null;
         [SerializeField]
-        protected Class ability_class = null;
+        public Class ability_class = null;
 
         [Header("Mechanics")]
         [SerializeField]
-        protected int mana_cost = 0;
+        public int mana_cost = 0;
         [SerializeField]
-        protected TargetType target_type = TargetType.Self;
+        public TargetType target_type = TargetType.Self;
         [SerializeField]
-        protected int area_size = 0;
+        public int area_size = 0;
         [SerializeField]
-        protected float activation_time = 0;
+        public float activation_time = 0;
         [SerializeField]
-        protected float damage = 0;
+        public float damage = 0;
         [SerializeField]
-        protected float range = 0;
+        public float range = 0;
 
         [Header("Relations")]
         [SerializeField]
-        protected GameObject prefab = null;
+        public GameObject prefab = null;
 
         [Header("Visuals")]
         [SerializeField]
-        protected Weapon weapon = Weapon.Sword;
+        public Weapon weapon = Weapon.Sword;
         [SerializeField]
-        protected Animation self_animation = null;
+        public Animation self_animation = null;
         [SerializeField]
-        protected Animation target_animation = null;
+        public Animation target_animation = null;
 
         #endregion
 

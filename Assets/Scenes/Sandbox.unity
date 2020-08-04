@@ -2071,19 +2071,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 1921504719}
-  state: 0
-  target: {fileID: 0}
+  stats: {fileID: 1921504722}
+  ability: {fileID: 11400000, guid: 1cd91fa55e9a54be685d0cdc326afd6c, type: 2}
   target_view_prefab: {fileID: 297982989861704577, guid: eadce7ee7d49849ccb9c8b368dd16633,
     type: 3}
   target_square: {fileID: 3741213111656234485, guid: 98499fc11a44740f2a263dd45abee5b9,
     type: 3}
-  non_ground_layers:
-    serializedVersion: 2
-    m_Bits: 15159
-  ability_target_type: 7
-  ability_range: 5
-  ability_show_area: 1
-  ability_size: 3
 --- !u!1 &1997660886
 GameObject:
   m_ObjectHideFlags: 0

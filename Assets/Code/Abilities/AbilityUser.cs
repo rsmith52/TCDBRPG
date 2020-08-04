@@ -1,5 +1,6 @@
-﻿using UnityEngine;
-using Cards;
+﻿using System.Collections.Generic;
+using UnityEngine;
+using Stats;
 
 /*
  * This code contains the basic setup and information for a character that can
@@ -23,53 +24,90 @@ namespace Abilities
         [SerializeField]
         protected GameObject character = null;
 
+        [SerializeField]
+        protected CharacterStats stats = null;
+
+        [SerializeField]
+        protected Ability ability = null;
+
+        #endregion
+
+
+        #region Structs
+
+        protected struct SetAbility
+        {
+            public Ability ability;
+            public GameObject target_view;
+            public List<GameObject> squares;
+        }
+
         #endregion
 
 
         #region Fields
 
-        public State state; // MAKE PRIVATE
-        public Transform target; // MAKE PRIVATE
+        protected State state;
         protected TargetType target_type;
+        protected float activation_time_waited;
+        protected SetAbility ability_in_activation;
 
         #endregion
 
 
         #region MonoBehavior
 
-        protected virtual void Start()
+        private void Start()
         {
             target_type = TargetType.None;
-            target = null;
             state = State.Waiting;
         }
 
-        public void AimAbility()
+        protected virtual void Update()
+        {
+            if (state == State.Activating)
+                activation_time_waited += Time.deltaTime;
+        }
+
+        protected virtual void FixedUpdate()
+        {
+            if (state == State.Activating && activation_time_waited >= ability.activation_time)
+            {
+                state = State.Waiting;
+                UseAbility(ability_in_activation);
+            }
+        }
+
+        protected void StartAbility(SetAbility set_ability)
         {
             return;
-        }
-
-        // These methods must be implemented by classes implementing this
-        protected abstract Transform SetTarget();
-
-        public void UseAbility(Ability ability, Transform target)
-        {
-            state = State.Activating;
             // Show animation on user
-            // Wait activation time
-            // Remove mana
-
-            state = State.Waiting; // This allows other abilities to be used while the first continues to resolve
-            // Perform ability
-            // Determine results
-            // Show animation on target
-            // Apply results
         }
 
-        public void Cancel()
+        private void UseAbility(SetAbility set_ability)
         {
-            target_type = TargetType.None;
-            target = null;
+            // Remove mana
+            stats.mana.ChangeCurValue(-1 * set_ability.ability.mana_cost);
+
+            // Perform ability
+            Debug.Log("Used ability " + set_ability.ability.name);
+
+            // Cleanup targeting
+            foreach (GameObject square in set_ability.squares)
+            {
+                GameObject.Destroy(square);
+            }
+            GameObject.Destroy(set_ability.target_view);
+        }
+
+        protected void CancelAbility()
+        {
+            // Cleanup targeting
+            foreach (GameObject square in ability_in_activation.squares)
+            {
+                GameObject.Destroy(square);
+            }
+            GameObject.Destroy(ability_in_activation.target_view);
             state = State.Waiting;
         }
 

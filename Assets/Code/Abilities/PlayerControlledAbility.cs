@@ -19,20 +19,6 @@ namespace Abilities
         [SerializeField]
         protected GameObject target_square;
 
-        [SerializeField]
-        protected LayerMask non_ground_layers;
-
-        #endregion
-
-
-        #region Temporary Settings
-
-        [Header("Temp Settings")]
-        public TargetType ability_target_type = TargetType.Square;
-        public float ability_range = 5f;
-        public bool ability_show_area = true;
-        public int ability_size = 3;
-
         #endregion
 
 
@@ -52,22 +38,21 @@ namespace Abilities
 
         #region MonoBehavior
 
-        protected override void Start()
+        protected override void Update()
         {
-            base.Start();
+            base.Update();
 
-            SetupTargetView(ability_target_type, ability_size);
-            range = ability_range;
-            show_area = ability_show_area;
-        }
+            if (state == State.Waiting && Input.GetKeyDown(KeyCode.Space))
+            {
+                state = State.Targeting;
+                SetupTargetView(ability.target_type, ability.area_size);
+            }
 
-        private void Update()
-        {
             if (state == State.Targeting)
             {
                 // Casts the ray and get the first game object hit
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(ray, out hit, non_ground_layers))
+                if (Physics.Raycast(ray, out hit))
                     surface_hit = hit.point;
 
                 // Check if in range of character
@@ -76,11 +61,18 @@ namespace Abilities
                 // Determine if mouse clicked
                 mouse_down = Input.GetMouseButton(0);
             }
+
+            if (state == State.Activating && Input.GetKeyDown(KeyCode.C))
+            {
+                CancelAbility();
+            }
         }
 
-        private void FixedUpdate()
+        protected override void FixedUpdate()
         {
-            if (state == State.Targeting && show_area)
+            base.FixedUpdate();
+
+            if (state == State.Targeting)
             {
                 // Set target view position
                 float x_pos = surface_hit.x;
@@ -98,27 +90,27 @@ namespace Abilities
                 // Set target if mouse down and in range
                 if (in_range && mouse_down)
                 {
-                    target = target_view.transform;
-
-                    // Hide target view squares
-                    foreach (GameObject square in target_squares)
+                    // Check if enough mana
+                    if (stats.mana.GetCurValue() >= ability.mana_cost)
                     {
-                        SpriteRenderer renderer = square.GetComponent<SpriteRenderer>();
-                        renderer.enabled = false;
+                        // Store target until activation completed
+                        SetAbility set_ability = new SetAbility();
+                        set_ability.ability = ability;
+                        set_ability.target_view = target_view;
+                        set_ability.squares = target_squares;
+
+                        // Move to ability activation
+                        state = State.Activating;
+                        ability_in_activation = set_ability;
+                        StartAbility(set_ability);
+                        activation_time_waited = 0;
                     }
-                    // Move to ability activation
-                    state = State.Activating;
+                    // Not enough mana
+                    else {
+                        // Do something to show not enough mana
+                    }
                 }
             }
-        }
-
-        protected override Transform SetTarget()
-        {
-            // Setup target view
-            // Loop until target selected
-            // Return transform of that target
-
-            return transform;
         }
 
         private void SetupTargetView(TargetType target_type, int size)
@@ -135,6 +127,8 @@ namespace Abilities
                 default:
                     break;
             }
+
+            range = ability.range;
         }
 
         private void BuildSquareTarget(int size)
