@@ -4780,8 +4780,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 8.5, z: 1}
-  m_Center: {x: 0, y: -1, z: -3.5}
+  m_Size: {x: 10, y: 9.25, z: 0.1}
+  m_Center: {x: 0, y: -1, z: -4}
 --- !u!114 &2932844779808886466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4797,4 +4797,3 @@ MonoBehaviour:
   collider: {fileID: 2932844779808886468}
   mana_ring: {fileID: 6919254252440965876, guid: bfd266ad704c244ec8a349fb7b5e761a,
     type: 3}
-  characters: []
