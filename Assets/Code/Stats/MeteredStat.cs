@@ -55,9 +55,7 @@ namespace Stats
             // Add all modifiers to base stat
             float ret_val = base_value;
             foreach (Modifier modifier in modifiers)
-            {
                 ret_val += modifier.GetRoundedValue();
-            }
             return (int)ret_val;
         }
 
@@ -72,9 +70,7 @@ namespace Stats
 
             // Ensure value doesn't exceed max
             if (cur_value > GetValue())
-            {
                 cur_value = GetValue();
-            }
         }
 
         #endregion

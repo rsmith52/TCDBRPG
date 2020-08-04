@@ -59,12 +59,10 @@ namespace Movement
             }
 
             if (path == null || Time.time < time_started + wait_before_start)
-            {
                 // We have no path to follow yet
                 // or we are still waiting an amount of time before starting the movement
                 // so we do nothing
                 return;
-            }
 
             // Check in a loop if we are close enough to the current waypoint to switch to the next one.
             // We do this in a loop because many waypoints might be close to each other and we may reach
@@ -79,9 +77,7 @@ namespace Movement
                 {
                     // Check if there is another waypoint or if we have reached the end of the path
                     if (current_waypoint + 1 < path.vectorPath.Count)
-                    {
                         current_waypoint++;
-                    }
                     else
                     {
                         // Set a status variable to indicate that the agent has reached the end of the path.
@@ -91,9 +87,7 @@ namespace Movement
                     }
                 }
                 else
-                {
                     break;
-                }
             }
             // Direction to the next waypoint
             // When the path has reached the end we stop moving
@@ -102,9 +96,7 @@ namespace Movement
 
             // Update Animator
             if (Math.Abs(movement.x) > Math.Abs(movement.y))
-            {
                 sprite_renderer.flipX = movement.x < 0 ? true : false;
-            }
             animator.SetBool(Constants.WALK_PROPERTY,
                              Math.Abs(movement.sqrMagnitude) > Mathf.Epsilon);
         }
@@ -119,7 +111,8 @@ namespace Movement
             p.Claim(this);
             if (!p.error)
             {
-                if (path != null) path.Release(this);
+                if (path != null)
+                    path.Release(this);
                 path = p;
                 // Reset the waypoint counter so that we start to move towards the first point in the path
                 current_waypoint = 0;

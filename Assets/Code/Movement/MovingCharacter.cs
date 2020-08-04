@@ -61,15 +61,11 @@ namespace Movement
                 physics_body.velocity = movement * speed;
 
                 if (jump_input == 1 && Settings.ALLOW_JUMP)
-                {
                     physics_body.velocity = new Vector3(0, jump_input, 0) * jump_force;
-                }
             }
             // While in the air, provide less control
             else
-            {
                 physics_body.velocity += (movement * Constants.AIR_CONTROL_MOD * speed);
-            }
         }
 
         private bool IsGrounded()

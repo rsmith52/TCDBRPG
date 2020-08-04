@@ -38,9 +38,7 @@ namespace UI
         {
             // If this is a player, immediately destroy
             if (character.layer == Constants.PLAYER_LAYER)
-            {
                 GameObject.Destroy(this.gameObject);
-            }
 
             stats = character.GetComponent<CharacterStats>();
             max_health = stats.health.GetValue();

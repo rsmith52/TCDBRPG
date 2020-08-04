@@ -48,13 +48,9 @@ namespace World
 
                 // Update mana ring size
                 if (stats.mana.GetCurValue() != stats.mana.GetValue())
-                {
                     ring_size = (Settings.MANA_GAIN_RATE - (Time.time - stats.mana_time)) * Constants.MANA_RING_SIZE / Settings.MANA_GAIN_RATE;
-                }
                 else
-                {
                     ring_size = 0f;
-                }
                 ring.transform.localScale = new Vector3(ring_size, ring_size, 0);
 
                 // Add mana if enough time has passed

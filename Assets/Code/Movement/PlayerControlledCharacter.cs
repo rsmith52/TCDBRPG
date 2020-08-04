@@ -47,9 +47,7 @@ namespace Movement
             // Jump
             jump_input = 0;
             if (Input.GetKey(KeyCode.Space))
-            {
                 jump_input = 1;
-            }
 
             // Normalize
             movement = new Vector3(inputX, 0, inputY).normalized;
@@ -59,21 +57,13 @@ namespace Movement
             {
                 facing_dir = transform.TransformDirection(Vector3.down);
                 if (!Physics.Raycast(transform.position - new Vector3(0f, 0f, 1f), facing_dir, 1))
-                {
                     movement.z = movement.z > 0 ? movement.z : 0;
-                }
                 if (!Physics.Raycast(transform.position - new Vector3(0.75f, 0f, 0f), facing_dir, 1))
-                {
                     movement.x = movement.x > 0 ? movement.x : 0;
-                }
                 if (!Physics.Raycast(transform.position - new Vector3(0f, 0f, -0.1f), facing_dir, 1))
-                {
                     movement.z = movement.z < 0 ? movement.z : 0;
-                }
                 if (!Physics.Raycast(transform.position - new Vector3(-0.75f, 0f, 0f), facing_dir, 1))
-                {
                     movement.x = movement.x < 0 ? movement.x : 0;
-                }
             }
 
             // Update Animator

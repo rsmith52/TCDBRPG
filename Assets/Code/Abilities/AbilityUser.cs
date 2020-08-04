@@ -80,7 +80,7 @@ namespace Abilities
 
         protected void StartAbility(SetAbility set_ability)
         {
-            return;
+            Debug.Log("Ability started " + set_ability.ability.name);
             // Show animation on user
         }
 
@@ -91,6 +91,8 @@ namespace Abilities
 
             // Perform ability
             Debug.Log("Used ability " + set_ability.ability.name);
+
+            // Show animation on target
 
             // Cleanup targeting
             foreach (GameObject square in set_ability.squares)

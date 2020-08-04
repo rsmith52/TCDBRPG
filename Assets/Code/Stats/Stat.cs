@@ -48,9 +48,7 @@ namespace Stats
             // Add all modifiers to base stat
             float ret_val = base_value;
             foreach (Modifier modifier in modifiers)
-            {
                 ret_val += modifier.GetValue();
-            }
             return ret_val;
         }
 

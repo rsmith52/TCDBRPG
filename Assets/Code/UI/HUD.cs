@@ -117,13 +117,9 @@ namespace UI
 
             // Redraw bars if total amounts change
             if (health_total != character_stats.health.GetValue())
-            {
                 RedrawHealth();
-            }
             if (mana_total != character_stats.mana.GetValue())
-            {
                 RedrawMana();
-            }
         }
 
         private void FixedUpdate()
@@ -135,13 +131,9 @@ namespace UI
                 img = health_segments[i].GetComponent<Image>();
                 Color temp_color = img.color;
                 if (i < cur_health)
-                {
                     temp_color.a = 1f;
-                }
                 else
-                {
                     temp_color.a = 0f;
-                }
                 img.color = temp_color;
             }
 
@@ -152,13 +144,9 @@ namespace UI
                 img = mana_segments[i].GetComponent<Image>();
                 Color temp_color = img.color;
                 if (i < cur_mana)
-                {
                     temp_color.a = 1f;
-                }
                 else
-                {
                     temp_color.a = 0f;
-                }
                 img.color = temp_color;
             }
         }
@@ -167,9 +155,7 @@ namespace UI
         {
             // Destroy existing health bar
             for (int i = 0; i < health_segments.Count; i++)
-            {
                 GameObject.Destroy(health_segments[i]);
-            }
 
             // Setup health bar
             health_segments = new List<GameObject>();
@@ -200,9 +186,7 @@ namespace UI
         {
             // Destroy existing mana bar
             for (int i = 0; i < mana_segments.Count; i++)
-            {
                 GameObject.Destroy(mana_segments[i]);
-            }
 
             // Setup mana bar
             mana_segments = new List<GameObject>();

@@ -63,9 +63,7 @@ namespace Abilities
             }
 
             if (state == State.Activating && Input.GetKeyDown(KeyCode.C))
-            {
                 CancelAbility();
-            }
         }
 
         protected override void FixedUpdate()
