@@ -20,7 +20,6 @@ namespace Abilities
         Ally,
         Line,
         Cone,
-        Circle,
         Square,
         None
     };

@@ -75,7 +75,9 @@ namespace Abilities
 
         protected bool DistanceInRange(Vector3 other_pos, float range)
         {
-            Vector3 player_pos = transform.position;
+            // Ignore y component so height on map doesn't get taken into account
+            Vector3 player_pos = new Vector3(transform.position.x, 0, transform.position.z);
+            other_pos = new Vector3(other_pos.x, 0, other_pos.z);
 
             Vector3 offset = other_pos - player_pos;
             float sqlen = offset.sqrMagnitude;

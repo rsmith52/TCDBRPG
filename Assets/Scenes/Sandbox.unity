@@ -2073,14 +2073,17 @@ MonoBehaviour:
   character: {fileID: 1921504719}
   state: 0
   target: {fileID: 0}
-  target_view: {fileID: 297982989861704577, guid: eadce7ee7d49849ccb9c8b368dd16633,
+  target_view_prefab: {fileID: 297982989861704577, guid: eadce7ee7d49849ccb9c8b368dd16633,
     type: 3}
   target_square: {fileID: 3741213111656234485, guid: 98499fc11a44740f2a263dd45abee5b9,
     type: 3}
-  ability_target_type: 8
+  non_ground_layers:
+    serializedVersion: 2
+    m_Bits: 15159
+  ability_target_type: 7
   ability_range: 5
   ability_show_area: 1
-  ability_area: 3
+  ability_size: 3
 --- !u!1 &1997660886
 GameObject:
   m_ObjectHideFlags: 0

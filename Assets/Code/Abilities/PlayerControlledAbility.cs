@@ -13,12 +13,14 @@ namespace Abilities
     {
         #region Inspector
 
-        [Header("Relations")]
         [SerializeField]
         protected GameObject target_view_prefab;
 
         [SerializeField]
         protected GameObject target_square;
+
+        [SerializeField]
+        protected LayerMask non_ground_layers;
 
         #endregion
 
@@ -43,6 +45,7 @@ namespace Abilities
         private bool show_area;
         private GameObject target_view;
         private List<GameObject> target_squares;
+        private bool mouse_down;
 
         #endregion
 
@@ -64,11 +67,14 @@ namespace Abilities
             {
                 // Casts the ray and get the first game object hit
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                Physics.Raycast(ray, out hit);
-                surface_hit = hit.point;
+                if (Physics.Raycast(ray, out hit, non_ground_layers))
+                    surface_hit = hit.point;
 
                 // Check if in range of character
                 in_range = DistanceInRange(surface_hit, range);
+
+                // Determine if mouse clicked
+                mouse_down = Input.GetMouseButton(0);
             }
         }
 
@@ -78,21 +84,30 @@ namespace Abilities
             {
                 // Set target view position
                 float x_pos = surface_hit.x;
-                float y_pos = Mathf.Round((2 * surface_hit.y)) / 2 + Constants.TARGET_OFF_GROUND_DIST; // Round to nearest half and adjust to put off ground a smidge
+                float y_pos = Mathf.Floor(surface_hit.y / 1.5f) * 1.5f + Constants.TARGET_OFF_GROUND_DIST; // Round to nearest 1.5 and adjust to put off ground a smidge
                 float z_pos = surface_hit.z + Constants.TARGET_OFF_GROUND_DIST; // Adjust to put off ground a smidge
                 target_view.transform.localPosition = new Vector3(x_pos, y_pos, z_pos);
 
                 // Set target view color
-                // target_view_renderer.color = in_range ? Constants.TARGET_VALID_COLOR : Constants.TARGET_INVALID_COLOR;
-
-                // Set scale
-                if (target_type == TargetType.Circle)
+                foreach (GameObject square in target_squares)
                 {
-                    target_view.transform.localScale = new Vector3();
+                    SpriteRenderer renderer = square.GetComponent<SpriteRenderer>();
+                    renderer.color = in_range ? Constants.TARGET_VALID_COLOR : Constants.TARGET_INVALID_COLOR;
                 }
-                else if (target_type == TargetType.Square)
+
+                // Set target if mouse down and in range
+                if (in_range && mouse_down)
                 {
-                    target_view.transform.localScale = new Vector3();
+                    target = target_view.transform;
+
+                    // Hide target view squares
+                    foreach (GameObject square in target_squares)
+                    {
+                        SpriteRenderer renderer = square.GetComponent<SpriteRenderer>();
+                        renderer.enabled = false;
+                    }
+                    // Move to ability activation
+                    state = State.Activating;
                 }
             }
         }
@@ -109,6 +124,7 @@ namespace Abilities
         private void SetupTargetView(TargetType target_type, int size)
         {
             target_view = Instantiate(target_view_prefab);
+            target_view.transform.position = new Vector3(0, 0, 0);
             target_squares = new List<GameObject>();
 
             switch (target_type)
@@ -116,7 +132,7 @@ namespace Abilities
                 case TargetType.Square:
                     BuildSquareTarget(size);
                     break;
-                case TargetType.Circle:
+                default:
                     break;
             }
         }
@@ -141,7 +157,6 @@ namespace Abilities
                     target_squares.Add(square);
                 }
             }
-
         }
 
         #endregion

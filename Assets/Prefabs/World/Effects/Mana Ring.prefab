@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6919254252440965877}
   - component: {fileID: 6919254252440965874}
-  m_Layer: 12
+  m_Layer: 5
   m_Name: Mana Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
