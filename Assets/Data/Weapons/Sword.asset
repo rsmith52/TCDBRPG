@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Sword
   description: A basic sword.
-  img: {fileID: 21300000, guid: a0c4cc8d19ab54fb3b46350d216242eb, type: 3}
-  range: 1
+  sprite: {fileID: 21300000, guid: 98254e85528a2463f9e7fd2d629e7725, type: 3}
+  target: 1
+  range: 1.9
   damage: 1

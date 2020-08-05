@@ -14,18 +14,20 @@ namespace Stats
 
         [Header("General")]
         [SerializeField]
-        protected new string name = "Weapon Name";
+        public new string name = "Weapon Name";
         [SerializeField]
         [TextArea]
-        protected string description = "Weapon Description";
+        public string description = "Weapon Description";
         [SerializeField]
-        protected Sprite img = null;
+        public Sprite sprite = null;
 
         [Header("Mechanics")]
         [SerializeField]
-        protected float range = 1f;
+        public TargetType target = TargetType.Melee;
         [SerializeField]
-        protected int damage = 1;
+        public float range = 1f; // Hitbox size for melee
+        [SerializeField]
+        public int damage = 1;
 
         #endregion
 

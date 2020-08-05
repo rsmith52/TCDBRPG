@@ -50,13 +50,13 @@ namespace UI
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.M))
-                key_pressed = true;
-            if (key_pressed && Input.GetKeyUp(KeyCode.M))
+            if (!key_pressed && Input.GetKeyDown(Settings.KEY_MAP_TOGGLE))
             {
                 ToggleMapVisibility();
-                key_pressed = false;
+                key_pressed = true;
             }
+            if (key_pressed && Input.GetKeyUp(Settings.KEY_MAP_TOGGLE))
+                key_pressed = false;
         }
 
         private void ToggleMapVisibility()

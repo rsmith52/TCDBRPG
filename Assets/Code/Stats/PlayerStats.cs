@@ -20,7 +20,7 @@ namespace Stats
         [SerializeField]
         protected Class character_class = null;
 
-        [SerializeField]
+        [HideInInspector]
         public Weapon weapon = null;
 
         #endregion

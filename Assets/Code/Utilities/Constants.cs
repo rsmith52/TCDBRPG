@@ -16,6 +16,15 @@ namespace Utilities
         #endregion
 
 
+        #region Combat
+
+        public static readonly float WEAPON_DIST_OFFSET = -0.5f;
+        public static readonly float MELEE_WEAPON_WIDTH = 0.5f;
+        public static readonly float MELEE_WEAPON_SWING_DEGREES = 60;
+
+        #endregion
+
+
         #region Layers
 
         public static readonly int PLAYER_LAYER = 8;

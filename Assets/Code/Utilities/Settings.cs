@@ -1,4 +1,6 @@
-﻿/*
+﻿using UnityEngine;
+
+/*
  * This code stores settings used throughout the game.
  */
 
@@ -10,6 +12,10 @@ namespace Utilities
 
         public static readonly bool ALLOW_JUMP = false; // requires ALLOW_WALK_OFF
         public static readonly bool ALLOW_WALK_OFF = false;
+
+        // Controls
+        public static readonly KeyCode KEY_MAP_TOGGLE = KeyCode.M;
+        public static readonly KeyCode KEY_ATTACK = KeyCode.Space;
 
         #endregion
 
