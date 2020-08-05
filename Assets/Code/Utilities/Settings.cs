@@ -25,17 +25,24 @@ namespace Utilities
 
         #region Stat Settings
 
-        public static int BASE_HEALTH = 10;
-        public static int BASE_MANA = 10;
+        public static readonly int BASE_HEALTH = 10;
+        public static readonly int BASE_MANA = 10;
         public static readonly float BASE_SPEED = 3f;
         public static readonly float BASE_JUMP = 6.5f;
 
         #endregion
 
 
+        #region UI
+
+        public static readonly bool MINIMAP_START_VISIBLE = true;
+
+        #endregion
+
+
         #region World Settings
 
-        public static float MANA_GAIN_RATE = 2.5f; // seconds per 1 mana
+        public static readonly float MANA_GAIN_RATE = 2.5f; // seconds per 1 mana
 
         #endregion
 

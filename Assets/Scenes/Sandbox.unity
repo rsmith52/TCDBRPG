@@ -2560,6 +2560,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2088836869}
   - component: {fileID: 2088836872}
+  - component: {fileID: 2088836870}
   m_Layer: 5
   m_Name: Minimap
   m_TagString: Untagged
@@ -2588,6 +2589,23 @@ RectTransform:
   m_AnchoredPosition: {x: -210, y: -210}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2088836870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088836868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e9d593a207c14e59875eafc21e181ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  border: {fileID: 1155073416}
+  mask_image: {fileID: 230144852}
+  mask: {fileID: 230144851}
+  map: {fileID: 837408442}
+  show_map: 1
 --- !u!222 &2088836872
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -2,8 +2,8 @@
 using Utilities;
 
 /*
- * This code defines the stats every player will have, split between
- * regular stats and metered stats. It includes their race and class info.
+ * This code defines the stats every player will have. It also includes their 
+ * race and class info.
  */
 
 namespace Stats

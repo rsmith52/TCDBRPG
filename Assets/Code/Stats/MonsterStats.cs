@@ -2,8 +2,8 @@
 using Utilities;
 
 /*
- * This code defines the stats every monster will have, split between
- * regular stats and metered stats.
+ * This code defines the stats every monster will have. It will also include
+ * their type of behavior in the future.
  */
 
 namespace Stats

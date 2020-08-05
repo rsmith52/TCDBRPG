@@ -3,12 +3,13 @@ using Utilities;
 
 /*
  * This code defines the stats every character will have, split between
- * regular stats and metered stats.
+ * regular stats and metered stats. PlayerStats and MonsterStats extend from
+ * this.
  */
 
 namespace Stats
 {
-    public class CharacterStats : MonoBehaviour
+    public abstract class CharacterStats : MonoBehaviour
     {
         #region General Info
 
