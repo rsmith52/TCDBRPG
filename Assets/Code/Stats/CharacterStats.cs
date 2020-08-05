@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using Utilities;
-using Cards;
 
 /*
  * This code defines the stats every character will have, split between
@@ -22,6 +21,9 @@ namespace Stats
 
         [SerializeField]
         protected Class character_class = null;
+
+        [SerializeField]
+        public Weapon weapon = null;
 
         #endregion
 
@@ -56,6 +58,9 @@ namespace Stats
 
             health = new MeteredStat(character_race.health.GetValue(), character_race.health.GetCurValue());
             mana = new MeteredStat(character_race.mana.GetValue(), character_race.mana.GetCurValue());
+
+            // Set weapon
+            weapon = character_class.weapon;
         }
 
         #endregion

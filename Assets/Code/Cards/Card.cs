@@ -22,7 +22,7 @@ namespace Cards
     #endregion
 
 
-    [CreateAssetMenu(fileName = "Card", menuName = "Data/Card", order = 3)]
+    [CreateAssetMenu(fileName = "Card", menuName = "Data/Card", order = 2)]
     public class Card : ScriptableObject
     {
         #region ScriptableObject

@@ -13,7 +13,7 @@ namespace Abilities
     public enum TargetType
     {
         Self,
-        Immediate,
+        Melee,
         Projectile,
         Enemy,
         Ally,
@@ -26,7 +26,7 @@ namespace Abilities
     #endregion
 
 
-    [CreateAssetMenu(fileName = "Ability", menuName = "Data/Ability", order = 4)]
+    [CreateAssetMenu(fileName = "Ability", menuName = "Data/Ability", order = 1)]
     public class Ability : ScriptableObject
     {
         #region ScriptableObject
@@ -48,25 +48,11 @@ namespace Abilities
         [SerializeField]
         public TargetType target_type = TargetType.Self;
         [SerializeField]
-        public int area_size = 0;
-        [SerializeField]
-        public float activation_time = 0;
-        [SerializeField]
-        public float damage = 0;
-        [SerializeField]
-        public float range = 0;
+        public int reach = 0;
 
         [Header("Relations")]
         [SerializeField]
         public GameObject prefab = null;
-
-        [Header("Visuals")]
-        [SerializeField]
-        public Weapon weapon = Weapon.Sword;
-        [SerializeField]
-        public Animation self_animation = null;
-        [SerializeField]
-        public Animation target_animation = null;
 
         #endregion
 

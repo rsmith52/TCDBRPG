@@ -6,7 +6,7 @@ using Utilities;
  * This code handles player input to set targets for and use abilities.
  * Targeting/aim is selected through mouse/touch input.
  */
-
+/*
 namespace Abilities
 {
     public class PlayerControlledAbility : AbilityUser
@@ -154,4 +154,4 @@ namespace Abilities
         #endregion
 
     }
-}
+}*/

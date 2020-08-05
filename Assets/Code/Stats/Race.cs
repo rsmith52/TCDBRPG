@@ -7,21 +7,17 @@ using Utilities;
 
 namespace Stats
 {
-    #region Enums
-    #endregion
-
-
-    [CreateAssetMenu(fileName = "Race", menuName = "Data/Race", order = 1)]
+    [CreateAssetMenu(fileName = "Race", menuName = "Data/Race", order = 4)]
     public class Race : ScriptableObject
     {
         #region ScriptableObject
 
         [Header("General")]
         [SerializeField]
-        public readonly new string name = "Race Name";
+        public new string name = "Race Name";
         [SerializeField]
         [TextArea]
-        public readonly string description = "Race Description";
+        public string description = "Race Description";
         [SerializeField]
         public Sprite icon = null;
 

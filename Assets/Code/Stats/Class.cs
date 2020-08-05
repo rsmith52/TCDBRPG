@@ -7,20 +7,7 @@ using Abilities;
 
 namespace Stats
 {
-    #region Enums
-
-    public enum Weapon
-    {
-        Sword,
-        Bow,
-        Dagger,
-        Staff
-    };
-
-    #endregion
-
-
-    [CreateAssetMenu(fileName = "Class", menuName = "Data/Class", order = 2)]
+    [CreateAssetMenu(fileName = "Class", menuName = "Data/Class", order = 3)]
     public class Class : ScriptableObject
     {
         #region ScriptableObject
@@ -33,12 +20,10 @@ namespace Stats
         protected string description = "Class Description";
         [SerializeField]
         protected Sprite icon = null;
-        [SerializeField]
-        protected Weapon weapone = Weapon.Sword;
 
         [Header("Abilities")]
         [SerializeField]
-        protected Ability class_basic = null;
+        public Weapon weapon = null;
         [SerializeField]
         protected Ability class_special = null;
 

@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9429da8f5f715426eac50f355ea84cb3, type: 3}
   m_Name: Elf
   m_EditorClassIdentifier: 
+  name: Elf
+  description: Race Description
   icon: {fileID: 21300000, guid: 9e0ac95791fe7479aa97ce9cfc58da7b, type: 3}
   speed:
     base_value: 3

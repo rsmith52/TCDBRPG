@@ -971,12 +971,12 @@ PrefabInstance:
     - target: {fileID: 2932844779808886471, guid: 7944b8c83958241c5b0f6555df5980eb,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2932844779808886471, guid: 7944b8c83958241c5b0f6555df5980eb,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2932844779808886471, guid: 7944b8c83958241c5b0f6555df5980eb,
         type: 3}
@@ -1198,16 +1198,6 @@ PrefabInstance:
       propertyPath: sprite_renderer
       value: 
       objectReference: {fileID: 677470446}
-    - target: {fileID: 9114592757180133421, guid: 368505b57e0a8450d98922058de72f3e,
-        type: 3}
-      propertyPath: ground_layer.m_Bits
-      value: 1024
-      objectReference: {fileID: 0}
-    - target: {fileID: 9114592757180133421, guid: 368505b57e0a8450d98922058de72f3e,
-        type: 3}
-      propertyPath: non_ground_layers.m_Bits
-      value: 15104
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 368505b57e0a8450d98922058de72f3e, type: 3}
 --- !u!1001 &1093109883

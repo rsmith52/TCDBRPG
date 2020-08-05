@@ -28,7 +28,7 @@ namespace UI
         private RaycastHit hit;
         private Vector3 surface_hit;
         private Vector3 player_pos;
-        public Vector3 direction;
+        private Vector3 direction;
 
         #endregion
 
@@ -44,18 +44,22 @@ namespace UI
 
         private void Update()
         {
+            // Get offset player position
+            player_pos = character.transform.position + new Vector3(0, Constants.ARROW_DIST_OFFSET, Constants.ARROW_DIST_OFFSET);
+
             // Casts the ray and get the first game object hit
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             Physics.Raycast(ray, out hit);
             surface_hit = hit.point;
-            player_pos = character.transform.position + new Vector3(0, Constants.ARROW_DIST_OFFSET, Constants.ARROW_DIST_OFFSET);
+
+            // Calculate direction from player to point
             direction = (surface_hit - player_pos);
             direction = new Vector3(direction.x, 0, direction.z).normalized;
         }
 
         private void FixedUpdate()
         {
-            // Set position on circle
+            // Set position about character
             transform.localPosition = new Vector3(
                 Constants.ARROW_DIST_FROM_CHARACTER * direction.x,
                 Constants.ARROW_DIST_OFFSET,
@@ -77,6 +81,11 @@ namespace UI
                      90 + Mathf.Rad2Deg * Mathf.Atan(direction.z / direction.x));
                 sprite_renderer.flipX = false;
             }
+        }
+
+        public Vector3 GetAimDirection()
+        {
+            return direction;
         }
 
         #endregion

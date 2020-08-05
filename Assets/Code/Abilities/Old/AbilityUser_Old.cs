@@ -6,7 +6,7 @@ using Stats;
  * This code contains the basic setup and information for a character that can
  * use abilities.
  */
-
+/*
 namespace Abilities
 {
     public enum State
@@ -128,4 +128,4 @@ namespace Abilities
         #endregion
 
     }
-}
+}*/
