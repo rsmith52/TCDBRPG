@@ -17,7 +17,7 @@ namespace UI
 
         [Header("Relations")]
         [SerializeField]
-        protected CharacterStats character_stats;
+        protected PlayerStats character_stats;
 
         // Health Bar Parts
         [SerializeField]

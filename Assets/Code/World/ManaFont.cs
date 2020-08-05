@@ -43,7 +43,7 @@ namespace World
             foreach (Collider character in characters)
             {
                 GameObject obj = character.gameObject;
-                CharacterStats stats = obj.GetComponent<CharacterStats>();
+                PlayerStats stats = obj.GetComponent<PlayerStats>();
                 GameObject ring = obj.transform.Find(Constants.MANA_RING_NAME).gameObject;
 
                 // Update mana ring size
@@ -65,7 +65,7 @@ namespace World
         private void OnTriggerEnter(Collider other)
         {
             GameObject obj = other.gameObject;
-            CharacterStats stats = obj.GetComponent<CharacterStats>();
+            PlayerStats stats = obj.GetComponent<PlayerStats>();
             if (stats != null && !characters.Contains(other) && obj.layer == Constants.PLAYER_LAYER)
             {
                 characters.Add(other);
@@ -77,7 +77,7 @@ namespace World
         private void OnTriggerExit(Collider other)
         {
             GameObject obj = other.gameObject;
-            CharacterStats stats = obj.GetComponent<CharacterStats>();
+            PlayerStats stats = obj.GetComponent<PlayerStats>();
             if (stats != null && obj.layer == Constants.PLAYER_LAYER)
             {
                 characters.Remove(other);

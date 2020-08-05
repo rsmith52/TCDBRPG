@@ -16,15 +16,6 @@ namespace Stats
         [SerializeField]
         protected new string name = "Name";
 
-        [SerializeField]
-        protected Race character_race = null;
-
-        [SerializeField]
-        protected Class character_class = null;
-
-        [SerializeField]
-        public Weapon weapon = null;
-
         #endregion
 
 
@@ -43,25 +34,6 @@ namespace Stats
 
         [Header("Metered Stats")]
         public MeteredStat health;
-        public MeteredStat mana;
-        public float mana_time { get; set; }
-
-        #endregion
-
-
-        #region MonoBehavior
-
-        private void Start()
-        {
-            // Set stats
-            speed = character_race.speed;
-
-            health = new MeteredStat(character_race.health.GetValue(), character_race.health.GetCurValue());
-            mana = new MeteredStat(character_race.mana.GetValue(), character_race.mana.GetCurValue());
-
-            // Set weapon
-            weapon = character_class.weapon;
-        }
 
         #endregion
 
