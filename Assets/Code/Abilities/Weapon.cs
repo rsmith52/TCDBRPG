@@ -4,8 +4,7 @@ using Stats;
 using Utilities;
 
 /*
- * This code defines a weapon. It also handles applying damage to struck 
- * creatures.
+ * This code defines a weapon.
  */
 
 namespace Abilities
@@ -40,18 +39,6 @@ namespace Abilities
 
 
         #region MonoBehavior
-
-        protected void Damage(GameObject other)
-        {
-            // Apply damage
-            CharacterStats stats = other.GetComponent<CharacterStats>();
-            stats.health.ChangeCurValue(-1 * damage);
-
-            // Show damaged animation
-            Animator animator = other.GetComponentInChildren<Animator>();
-            animator.SetTrigger(Constants.WAS_HIT_PROPERTY);
-        }
-
         #endregion
 
     }

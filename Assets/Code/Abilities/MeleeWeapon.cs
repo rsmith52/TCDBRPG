@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Stats;
 using Utilities;
 
 /*
@@ -42,9 +43,9 @@ namespace Abilities
 
         private void OnTriggerEnter(Collider other)
         {
-            // Check if collision is with enemy
+            // Check if collision is with enemy, and damage them if so
             if (other.gameObject.layer == Constants.ENEMY_LAYER)
-                Damage(other.gameObject);
+                other.GetComponent<CharacterStats>().Damage(damage);
         }
 
         #endregion

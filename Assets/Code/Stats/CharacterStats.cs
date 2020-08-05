@@ -4,7 +4,7 @@ using Utilities;
 /*
  * This code defines the stats every character will have, split between
  * regular stats and metered stats. PlayerStats and MonsterStats extend from
- * this.
+ * this. Receiving damage is also handled here.
  */
 
 namespace Stats
@@ -37,6 +37,21 @@ namespace Stats
         public MeteredStat health;
         public MeteredStat mana;
         public float mana_time { get; set; }
+
+        #endregion
+
+
+        #region MonoBehavior
+
+        public void Damage(int damage)
+        {
+            // Apply damage
+            health.ChangeCurValue(-1 * damage);
+
+            // Show damaged animation
+            Animator animator = GetComponentInChildren<Animator>();
+            animator.SetTrigger(Constants.WAS_HIT_PROPERTY);
+        }
 
         #endregion
 
