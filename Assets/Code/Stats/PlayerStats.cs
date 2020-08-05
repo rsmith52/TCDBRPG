@@ -32,11 +32,6 @@ namespace Stats
 
 
         #region MeteredStats
-
-        [Header("Metered Stats")]
-        public MeteredStat mana;
-        public float mana_time { get; set; }
-
         #endregion
 
 

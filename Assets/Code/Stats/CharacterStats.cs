@@ -35,6 +35,8 @@ namespace Stats
 
         [Header("Metered Stats")]
         public MeteredStat health;
+        public MeteredStat mana;
+        public float mana_time { get; set; }
 
         #endregion
 

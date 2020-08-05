@@ -2016,6 +2016,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 6968789445649782976, guid: bcc5aee580c584be9ae8a4a5d1d15162,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 973055440}
     - target: {fileID: 6968789445649783038, guid: bcc5aee580c584be9ae8a4a5d1d15162,
         type: 3}
       propertyPath: m_Layer
