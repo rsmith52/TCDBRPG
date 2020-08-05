@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1816664949760239147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1816664949760239146}
+  - component: {fileID: 1816664949760239145}
+  m_Layer: 5
+  m_Name: HUD
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1816664949760239146
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816664949760239147}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1816664949760239145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816664949760239147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5589f3c1acecb4aca8a8f485de8e8f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character_stats: {fileID: 0}
+  health_bar_segment: {fileID: 8264912412107325374, guid: c002c0abf20ec4150b1711a377baeec6,
+    type: 3}
+  health_bar_cap: {fileID: 7642655770788839955, guid: 5357b8b56a5cd4532946f69782f38630,
+    type: 3}
+  health_bar_fill: {fileID: 3990952911640334562, guid: f0f25e202a6eb46718891f75a44831bf,
+    type: 3}
+  health_bar_cap_fill: {fileID: 842442836109891153, guid: c3c44d306472349b6bc846d738bdb2b7,
+    type: 3}
+  mana_bar_segment: {fileID: 5557637170763740865, guid: c27d7fdadcf394937b3a0dd208389a93,
+    type: 3}
+  mana_bar_cap: {fileID: 2277582547514697760, guid: 7e59fcd7695834b00a81d57d0318a9ec,
+    type: 3}
+  mana_bar_fill: {fileID: 298477298965849603, guid: 45ea0bb84ff1a41e09edd366f2185ced,
+    type: 3}
+  mana_bar_cap_fill: {fileID: 7264135638613749738, guid: dc363eb7d5c4b4f74bf446b21fe5f5ef,
+    type: 3}

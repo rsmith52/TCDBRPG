@@ -35,7 +35,7 @@ namespace Utilities
 
         #region UI
 
-        public static readonly bool MINIMAP_START_VISIBLE = true;
+        public static readonly bool MINIMAP_START_VISIBLE = false;
 
         #endregion
 
