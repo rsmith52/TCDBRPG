@@ -33,8 +33,6 @@ namespace Abilities
         private bool mouse_pressed;
         private Weapon slotted_weapon;
         private GameObject weapon;
-        private SpriteRenderer weapon_renderer;
-        private BoxCollider weapon_collider;
 
         #endregion
 
@@ -58,6 +56,7 @@ namespace Abilities
 
         private void BasicAttack()
         {
+            // Get equipped weapon
             slotted_weapon = stats.weapon;
 
             if (weapon == null && slotted_weapon.target == TargetType.Melee)
@@ -73,7 +72,8 @@ namespace Abilities
 
             // Set position and location based on ability aim
             weapon.transform.SetParent(ability_aim.transform);
-            weapon.transform.localPosition = new Vector3(0, 0, Constants.WEAPON_DIST_OFFSET);
+            weapon.transform.localPosition = new Vector3(0,
+                slotted_weapon.offset_from_character_mod, Constants.WEAPON_DIST_OFFSET);
             weapon.transform.localEulerAngles = new Vector3(0, 0, 180);
 
             // Perform attack in place, don't rotate further
@@ -93,6 +93,8 @@ namespace Abilities
             // Perform attack
             // Travel range in direction, checking collisions with enemies along the way
         }
+
+        private void UseAbility() { }
 
         #endregion
 

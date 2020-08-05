@@ -22,9 +22,12 @@ namespace Abilities
         [TextArea]
         public string description = "Weapon Description";
 
-        [Header("Animation")]
+        [Header("Visuals")]
         [SerializeField]
         public float animation_length = 1f;
+
+        [SerializeField]
+        public float offset_from_character_mod = 0;
 
         [Header("Mechanics")]
         [SerializeField]

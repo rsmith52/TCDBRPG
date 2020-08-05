@@ -11,10 +11,6 @@ namespace Abilities
     public class MeleeWeapon : Weapon
     {
         #region Inspector
-
-        [SerializeField]
-        public float reach = 1f;
-
         #endregion
 
 

@@ -27,7 +27,7 @@ namespace Abilities
 
     public class Ability : MonoBehaviour
     {
-        #region ScriptableObject
+        #region Inspector
 
         [Header("General")]
         [SerializeField]
@@ -47,10 +47,6 @@ namespace Abilities
         public TargetType target_type = TargetType.Self;
         [SerializeField]
         public int reach = 0;
-
-        [Header("Relations")]
-        [SerializeField]
-        public GameObject prefab = null;
 
         #endregion
 
