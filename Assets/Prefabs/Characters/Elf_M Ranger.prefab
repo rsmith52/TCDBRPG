@@ -151,7 +151,7 @@ CapsuleCollider:
   m_Radius: 0.3
   m_Height: 1.2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: -0.45}
 --- !u!54 &5872152340056195763
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -188,12 +188,12 @@ MonoBehaviour:
   health:
     base_value: 0
     cur_value: 0
-  character_race: {fileID: 11400000, guid: fae2a2e281b54416f85be0d48cdb6ff7, type: 2}
-  character_class: {fileID: 11400000, guid: 042793b8dcb0d466998b2ec751fe426b, type: 2}
-  weapon: {fileID: 0}
   mana:
     base_value: 0
     cur_value: 0
+  character_race: {fileID: 11400000, guid: fae2a2e281b54416f85be0d48cdb6ff7, type: 2}
+  character_class: {fileID: 11400000, guid: 042793b8dcb0d466998b2ec751fe426b, type: 2}
+  weapon: {fileID: 0}
 --- !u!114 &5872152340056195762
 MonoBehaviour:
   m_ObjectHideFlags: 0
