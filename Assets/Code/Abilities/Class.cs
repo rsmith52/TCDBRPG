@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
-using Abilities;
 
 /*
  * This code defines a character class.
  */
 
-namespace Stats
+namespace Abilities
 {
     [CreateAssetMenu(fileName = "Class", menuName = "Data/Class", order = 3)]
     public class Class : ScriptableObject

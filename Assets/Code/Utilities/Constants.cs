@@ -19,8 +19,7 @@ namespace Utilities
         #region Combat
 
         public static readonly float WEAPON_DIST_OFFSET = -0.5f;
-        public static readonly float MELEE_WEAPON_WIDTH = 0.5f;
-        public static readonly float MELEE_WEAPON_SWING_DEGREES = 60;
+        public static readonly float MELEE_WEAPON_WIDTH = 1f;
 
         #endregion
 
@@ -41,6 +40,8 @@ namespace Utilities
         public static readonly int WALK_PROPERTY = Animator.StringToHash("Walk");
         public static readonly float GROUND_DIST = 0.1f;
         public static readonly float AIR_CONTROL_MOD = 0.035f;
+        public static readonly int WAS_HIT_PROPERTY = Animator.StringToHash("WasHit");
+        public static readonly float ON_HIT_BOUNCE_FORCE = 10f;
 
         #endregion
 

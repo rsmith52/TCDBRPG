@@ -368,6 +368,11 @@ PrefabInstance:
       propertyPath: sprite_renderer
       value: 
       objectReference: {fileID: 5872152338180630612}
+    - target: {fileID: 9114592757180133421, guid: 368505b57e0a8450d98922058de72f3e,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 5872152340056195725}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 368505b57e0a8450d98922058de72f3e, type: 3}
 --- !u!4 &446072153305689008 stripped

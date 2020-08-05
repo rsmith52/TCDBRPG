@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 188182537041965797}
   - component: {fileID: 188182537041965796}
   - component: {fileID: 188182537041965798}
+  - component: {fileID: 1573934970797177346}
+  - component: {fileID: -2083385729462759756}
   m_Layer: 0
-  m_Name: Weapon
+  m_Name: Anime Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 459687855
-  m_SortingLayer: 2
+  m_SortingLayerID: -582933009
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 98254e85528a2463f9e7fd2d629e7725, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -93,5 +95,43 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 1.9, z: 1}
+  m_Size: {x: 2, y: 1.9, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &1573934970797177346
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188182537041965795}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9944af721b3004c49942e6687aaad325, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-2083385729462759756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188182537041965795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96bbb3452e6204dfaa2033cf8c4a2709, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Weapon Name
+  description: Weapon Description
+  animation_length: 0.15
+  target: 1
+  prefab: {fileID: 188182537041965795}
+  damage: 1
+  reach: 1

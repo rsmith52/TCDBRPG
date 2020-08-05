@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using Stats;
 using UI;
 using Utilities;
@@ -24,18 +25,12 @@ namespace Abilities
         [SerializeField]
         protected Ability slotted_ability = null;
 
-        [Header("Attack/Ability Bases")]
-        [SerializeField]
-        protected GameObject weapon_base = null;
-        [SerializeField]
-        protected GameObject projectile_base = null;
-
         #endregion
 
 
         #region Fields
 
-        private bool key_pressed;
+        private bool mouse_pressed;
         private Weapon slotted_weapon;
         private GameObject weapon;
         private SpriteRenderer weapon_renderer;
@@ -48,13 +43,13 @@ namespace Abilities
 
         private void Update()
         {
-            if (!key_pressed && Input.GetKeyDown(Settings.KEY_ATTACK))
+            if (!mouse_pressed && Input.GetMouseButtonDown(0))
             {
                 BasicAttack();
-                key_pressed = true;
+                mouse_pressed = true;
             }
-            if (key_pressed && Input.GetKeyUp(Settings.KEY_ATTACK))
-                key_pressed = false;
+            if (mouse_pressed && Input.GetMouseButtonUp(0))
+                mouse_pressed = false;
         }
 
         private void FixedUpdate()
@@ -65,7 +60,7 @@ namespace Abilities
         {
             slotted_weapon = stats.weapon;
 
-            if (slotted_weapon.target == TargetType.Melee)
+            if (weapon == null && slotted_weapon.target == TargetType.Melee)
                 BasicMelee();
             else if (slotted_weapon.target == TargetType.Projectile)
                 BasicProjectile();
@@ -74,37 +69,22 @@ namespace Abilities
         private void BasicMelee()
         {
             // Setup weapon object
-            weapon = Instantiate(weapon_base);
-            weapon_renderer = weapon.GetComponent<SpriteRenderer>();
-            weapon_renderer.sprite = slotted_weapon.sprite;
+            weapon = Instantiate(slotted_weapon.gameObject);
 
-            // Reset position and location - SET TO THE 30 DEGREE OFF POSITION
+            // Set position and location based on ability aim
             weapon.transform.SetParent(ability_aim.transform);
             weapon.transform.localPosition = new Vector3(0, 0, Constants.WEAPON_DIST_OFFSET);
             weapon.transform.localEulerAngles = new Vector3(0, 0, 180);
 
-            // Setup hitbox
-            weapon_collider = weapon.GetComponent<BoxCollider>();
-            weapon_collider.size = new Vector3(Constants.MELEE_WEAPON_WIDTH, slotted_weapon.range, 1);
-
-            // Perform attack
-            // Rotate weapon 30 degrees - DO ABOVE
-            // Rotate weapon 60 degrees opposite checking collisions with enemies along the way
-            // ACTUALLY USE Constants.MELEE_WEAPON_SWING_DEGREES
+            // Perform attack in place, don't rotate further
+            weapon.transform.SetParent(ability_aim.transform.parent);
         }
 
         private void BasicProjectile()
         {
             // Setup weapon object
-            slotted_weapon = stats.weapon;
-            weapon = Instantiate(weapon_base);
-            weapon_renderer = weapon.GetComponent<SpriteRenderer>();
-            weapon_renderer.sprite = slotted_weapon.sprite;
 
             // Reset position and location
-            weapon.transform.SetParent(ability_aim.transform);
-            weapon.transform.localPosition = new Vector3(0, 0, Constants.WEAPON_DIST_OFFSET);
-            weapon.transform.localEulerAngles = new Vector3(0, 0, 180);
 
             // Setup projectile object
 

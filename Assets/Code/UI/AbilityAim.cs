@@ -20,14 +20,18 @@ namespace UI
         [SerializeField]
         protected SpriteRenderer sprite_renderer;
 
+        [SerializeField]
+        protected Transform target;
+
         #endregion
 
 
         #region Fields
 
+        private bool follow_mouse;
         private RaycastHit hit;
         private Vector3 surface_hit;
-        private Vector3 player_pos;
+        private Vector3 character_pos;
         private Vector3 direction;
 
         #endregion
@@ -38,22 +42,30 @@ namespace UI
         private void Start()
         {
             // If this is not the player, immediately destroy?
+            /*
             if (character.layer != Constants.PLAYER_LAYER)
                 GameObject.Destroy(this.gameObject);
+            */
+            follow_mouse = character.layer == Constants.PLAYER_LAYER;
         }
 
         private void Update()
         {
-            // Get offset player position
-            player_pos = character.transform.position + new Vector3(0, Constants.ARROW_DIST_OFFSET, Constants.ARROW_DIST_OFFSET);
+            // Get offset character position
+            character_pos = character.transform.position + new Vector3(0, Constants.ARROW_DIST_OFFSET, Constants.ARROW_DIST_OFFSET);
 
-            // Casts the ray and get the first game object hit
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            Physics.Raycast(ray, out hit);
-            surface_hit = hit.point;
-
-            // Calculate direction from player to point
-            direction = (surface_hit - player_pos);
+            if (follow_mouse)
+            {
+                // Casts the ray and get the first game object hit
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                Physics.Raycast(ray, out hit);
+                surface_hit = hit.point;
+                direction = surface_hit - character_pos;
+            }
+            else
+                direction = target.position - character_pos;
+            
+            // Normalize direction from character to point
             direction = new Vector3(direction.x, 0, direction.z).normalized;
         }
 

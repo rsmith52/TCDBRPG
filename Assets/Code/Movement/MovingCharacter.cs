@@ -55,7 +55,6 @@ namespace Movement
         {
             speed = character_stats.speed.GetValue();
             jump_force = character_stats.jump_force.GetValue();
-
             if (IsGrounded())
             {
                 physics_body.velocity = movement * speed;
@@ -65,11 +64,15 @@ namespace Movement
             }
             // While in the air, provide less control
             else
+            {
                 physics_body.velocity += (movement * Constants.AIR_CONTROL_MOD * speed);
+            }
+                
         }
 
         private bool IsGrounded()
         {
+            dist_to_ground = collider.bounds.extents.y;
             return Physics.Raycast(transform.position, -Vector3.up, dist_to_ground + Constants.GROUND_DIST);
         }
 

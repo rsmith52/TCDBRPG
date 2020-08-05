@@ -25,9 +25,7 @@ namespace Abilities
 
     #endregion
 
-
-    [CreateAssetMenu(fileName = "Ability", menuName = "Data/Ability", order = 1)]
-    public class Ability : ScriptableObject
+    public class Ability : MonoBehaviour
     {
         #region ScriptableObject
 

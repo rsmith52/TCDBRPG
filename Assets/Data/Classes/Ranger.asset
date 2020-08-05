@@ -15,5 +15,5 @@ MonoBehaviour:
   name: Ranger
   description: A nature loving bow user.
   icon: {fileID: 0}
-  weapon: {fileID: 11400000, guid: 7379f2ac1dcd54b9ead9906cce0f5605, type: 2}
+  weapon: {fileID: -2083385729462759756, guid: 137345634ddbd4ff4bd3ecf542ad3fd2, type: 3}
   class_special: {fileID: 0}
