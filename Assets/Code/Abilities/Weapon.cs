@@ -26,7 +26,7 @@ namespace Abilities
         public float animation_length = 1f;
 
         [SerializeField]
-        public float offset_from_character_mod = 0; // higher is closer
+        public float offset_from_character_mod = 0; // higher is closer to character
 
         [Header("Mechanics")]
         [SerializeField]

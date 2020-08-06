@@ -116,7 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Bow
   description: Weapon Description
-  animation_length: 0.2
+  animation_length: 0.3
   offset_from_character_mod: 0.125
   target: 2
   damage: 1

@@ -130,7 +130,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Sword
   description: Weapon Description
-  animation_length: 0.15
+  animation_length: 0.2
   offset_from_character_mod: 0.075
   target: 1
   damage: 1
+  projectile: {fileID: 0}
+  range: 0
+  speed: 0

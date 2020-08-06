@@ -34,21 +34,30 @@ namespace Abilities
         private Weapon slotted_weapon;
         private GameObject weapon;
         private GameObject projectile;
+        private float cool_down;
+        private float cool_down_period;
 
         #endregion
 
 
         #region MonoBehavior
 
+        private void Start()
+        {
+            cool_down_period = 0;
+        }
+
         private void Update()
         {
-            if (!mouse_pressed && Input.GetMouseButtonDown(0))
+            if (!mouse_pressed && Input.GetMouseButtonDown(0) &&
+                cool_down >= cool_down_period)
             {
                 BasicAttack();
                 mouse_pressed = true;
             }
             if (mouse_pressed && Input.GetMouseButtonUp(0))
                 mouse_pressed = false;
+            cool_down += Time.deltaTime;
         }
 
         private void FixedUpdate()
@@ -59,6 +68,8 @@ namespace Abilities
         {
             // Get equipped weapon
             slotted_weapon = stats.weapon;
+            cool_down_period = slotted_weapon.animation_length;
+            cool_down = 0;
 
             if (weapon == null && slotted_weapon.target == TargetType.Melee)
                 BasicMelee();
