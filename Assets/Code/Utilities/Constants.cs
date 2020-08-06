@@ -19,7 +19,6 @@ namespace Utilities
         #region Combat
 
         public static readonly float WEAPON_DIST_OFFSET = -0.5f;
-        public static readonly float MELEE_WEAPON_WIDTH = 1f;
 
         #endregion
 
@@ -69,11 +68,6 @@ namespace Utilities
         // Targetting
         public static readonly float ARROW_DIST_OFFSET = -0.49f;
         public static readonly float ARROW_DIST_FROM_CHARACTER = 1.25f;
-
-        // Old Targetting
-        public static readonly float TARGET_OFF_GROUND_DIST = 0.01f;
-        public static readonly Color TARGET_VALID_COLOR = new Color(255, 255, 255, 55f/255f);
-        public static readonly Color TARGET_INVALID_COLOR = new Color(255, 0, 0, 55f/255f);
 
         #endregion
 

@@ -33,6 +33,7 @@ namespace Abilities
         private bool mouse_pressed;
         private Weapon slotted_weapon;
         private GameObject weapon;
+        private GameObject projectile;
 
         #endregion
 
@@ -83,15 +84,27 @@ namespace Abilities
         private void BasicProjectile()
         {
             // Setup weapon object
+            weapon = Instantiate(slotted_weapon.gameObject);
+            projectile = Instantiate(slotted_weapon.projectile);
 
-            // Reset position and location
+            // Set position and location
+            weapon.transform.SetParent(ability_aim.transform);
+            projectile.transform.SetParent(ability_aim.transform);
+            weapon.transform.localPosition = new Vector3(0,
+                slotted_weapon.offset_from_character_mod, Constants.WEAPON_DIST_OFFSET);
+            projectile.transform.localPosition = new Vector3(0,
+                slotted_weapon.offset_from_character_mod, Constants.WEAPON_DIST_OFFSET);
+            weapon.transform.localEulerAngles = new Vector3(0, 0, 180);
+            projectile.transform.localEulerAngles = new Vector3(0, 0, 180);
 
-            // Setup projectile object
-
-            // Setup projectile hitbox
+            // Perform attack in place, don't rotate further
+            weapon.transform.SetParent(ability_aim.transform.parent);
+            projectile.transform.SetParent(ability_aim.transform.parent);
 
             // Perform attack
-            // Travel range in direction, checking collisions with enemies along the way
+            Projectile projectile_code = projectile.GetComponent<Projectile>();
+            projectile_code.Fire(ability_aim.GetAimDirection(), slotted_weapon.range,
+                slotted_weapon.speed, slotted_weapon.damage);
         }
 
         private void UseAbility() { }

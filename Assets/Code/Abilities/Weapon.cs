@@ -26,7 +26,7 @@ namespace Abilities
         public float animation_length = 1f;
 
         [SerializeField]
-        public float offset_from_character_mod = 0;
+        public float offset_from_character_mod = 0; // higher is closer
 
         [Header("Mechanics")]
         [SerializeField]
@@ -34,6 +34,16 @@ namespace Abilities
 
         [SerializeField]
         public int damage = 1;
+
+        [Header("Ranged Extras")]
+        [SerializeField]
+        public GameObject projectile = null;
+
+        [SerializeField]
+        public float range = 0;
+
+        [SerializeField]
+        public float speed = 0;
 
         #endregion
 
