@@ -1355,19 +1355,13 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!1 &973055435 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5872152340056195761, guid: ec2fa5fe89e18498da940fa19d5d7e85,
-    type: 3}
-  m_PrefabInstance: {fileID: 1732018330}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &973055437 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5959557412888384512, guid: ec2fa5fe89e18498da940fa19d5d7e85,
     type: 3}
   m_PrefabInstance: {fileID: 1732018330}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 973055435}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 168436179eff24c868ce2be7fc27ab2c, type: 3}
@@ -1379,21 +1373,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1732018330}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &973055441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 973055435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81d2a0b53cb1645008ff3943e85ad6ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ability_aim: {fileID: 1927290398}
-  stats: {fileID: 973055437}
-  slotted_ability: {fileID: 0}
 --- !u!224 &1021692559 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1244806268387443780, guid: c0c66effb360f4a9a9578e6ee02acd48,
@@ -2115,6 +2094,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6224138669334823388, guid: ec2fa5fe89e18498da940fa19d5d7e85,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec2fa5fe89e18498da940fa19d5d7e85, type: 3}
 --- !u!1001 &1744956321
@@ -2396,18 +2380,6 @@ Transform:
   m_Father: {fileID: 2123057744}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1927290398 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 446072153305689009, guid: ec2fa5fe89e18498da940fa19d5d7e85,
-    type: 3}
-  m_PrefabInstance: {fileID: 1732018330}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b6c810d62efc4bd7be6be7df84b6ef0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1997660886
 GameObject:
   m_ObjectHideFlags: 0

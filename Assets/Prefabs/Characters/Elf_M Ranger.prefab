@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: 5872152340056195763}
   - component: {fileID: 5959557412888384512}
   - component: {fileID: 5872152340056195762}
+  - component: {fileID: 6224138669334823388}
   m_Layer: 13
   m_Name: Elf_M Ranger
   m_TagString: Untagged
@@ -212,6 +213,21 @@ MonoBehaviour:
   collider: {fileID: 5872152340056195724}
   sprite_renderer: {fileID: 5872152338180630612}
   animator: {fileID: 5872152338180630614}
+--- !u!114 &6224138669334823388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5872152340056195761}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81d2a0b53cb1645008ff3943e85ad6ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ability_aim: {fileID: 446072153305689009}
+  stats: {fileID: 5959557412888384512}
+  slotted_ability: {fileID: 0}
 --- !u!1001 &3280556303111695459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -463,3 +479,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8668670142351891356}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &446072153305689009 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9114592757180133421, guid: 368505b57e0a8450d98922058de72f3e,
+    type: 3}
+  m_PrefabInstance: {fileID: 8668670142351891356}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b6c810d62efc4bd7be6be7df84b6ef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

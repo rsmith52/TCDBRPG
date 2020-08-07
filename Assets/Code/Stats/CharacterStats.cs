@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using Utilities;
 
 /*
@@ -43,6 +44,12 @@ namespace Stats
 
         #region MonoBehavior
 
+        private void FixedUpdate()
+        {
+            if (health.GetCurValue() <= 0)
+                Die();
+        }
+
         public void Damage(int damage)
         {
             // Apply damage
@@ -51,6 +58,11 @@ namespace Stats
             // Show damaged animation
             Animator animator = GetComponentInChildren<Animator>();
             animator.SetTrigger(Constants.WAS_HIT_PROPERTY);
+        }
+
+        private void Die()
+        {
+            GameObject.Destroy(gameObject);
         }
 
         #endregion
