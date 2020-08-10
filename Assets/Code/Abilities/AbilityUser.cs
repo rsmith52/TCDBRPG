@@ -74,7 +74,7 @@ namespace Abilities
             if (weapon == null && slotted_weapon.target == TargetType.Melee)
                 BasicMelee();
             else if (slotted_weapon.target == TargetType.Projectile)
-                BasicProjectile();
+                BasicRanged();
         }
 
         private void BasicMelee()
@@ -92,7 +92,7 @@ namespace Abilities
             weapon.transform.SetParent(ability_aim.transform.parent);
         }
 
-        private void BasicProjectile()
+        private void BasicRanged()
         {
             // Setup weapon object
             weapon = Instantiate(slotted_weapon.gameObject);

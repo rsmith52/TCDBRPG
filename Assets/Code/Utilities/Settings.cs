@@ -22,8 +22,8 @@ namespace Utilities
 
         #region Deck Settings
 
-        public static readonly int DECK_SIZE = 30;
-        public static readonly int HAND_SIZE = 6;
+        public static readonly int DECK_SIZE = 10;
+        public static readonly int HAND_SIZE = 5; // Current code supports up to 10
         public static readonly float SHUFFLE_TIME = 1f; // seconds
 
         #endregion

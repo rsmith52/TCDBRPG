@@ -61,6 +61,10 @@ namespace Utilities
         public static readonly int MANA_Y_OFFSET = -150;
         public static readonly int MANA_SPACING = 50;
 
+        // Ability Bar
+        public static readonly int ABILITY_BAR_X_OFFSET = 100;
+        public static readonly int ABILITY_BAR_Y_OFFSET = 100;
+
         // Health Bars
         public static readonly float HEALTH_BAR_SIZE = 1.5f;
         public static readonly float HEALTH_BAR_HIDE_TIME = 2.5f; // seconds
