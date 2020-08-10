@@ -30,6 +30,7 @@ namespace UI
 
         private bool follow_mouse;
         private RaycastHit hit;
+        private GameObject object_hit;
         private Vector3 surface_hit;
         private Vector3 character_pos;
         private Vector3 direction;
@@ -59,7 +60,12 @@ namespace UI
                 // Casts the ray and get the first game object hit
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 Physics.Raycast(ray, out hit);
-                surface_hit = hit.point;
+                // Check if on ground or an object and offset based on this as necessary
+                object_hit = hit.collider.gameObject;
+                if (object_hit.layer == Constants.GROUND_LAYER)
+                    surface_hit = hit.point + new Vector3(0, Constants.ARROW_DIST_OFFSET, Constants.ARROW_DIST_OFFSET);
+                else
+                    surface_hit = hit.point;
                 direction = surface_hit - character_pos;
             }
             else
