@@ -14,9 +14,8 @@ namespace Stats
         #region General Info
 
         [Header("General")]
-
         [SerializeField]
-        protected Race character_race = null;
+        protected new string name = "Name";
 
         [SerializeField]
         protected Class character_class = null;
@@ -39,12 +38,6 @@ namespace Stats
 
         private void Start()
         {
-            // Set stats
-            speed = character_race.speed;
-
-            health = new MeteredStat(character_race.health.GetValue(), character_race.health.GetCurValue());
-            mana = new MeteredStat(character_race.mana.GetValue(), character_race.mana.GetCurValue());
-
             // Set weapon
             weapon = character_class.weapon;
         }

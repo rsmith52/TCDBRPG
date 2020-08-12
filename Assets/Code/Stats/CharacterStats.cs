@@ -13,18 +13,13 @@ namespace Stats
     public abstract class CharacterStats : MonoBehaviour
     {
         #region General Info
-
-        [Header("General")]
-        [SerializeField]
-        protected new string name = "Name";
-
         #endregion
 
 
         #region Stats
 
         [Header("Stats")]
-        public Stat speed;
+        public Stat speed = new Stat(Settings.BASE_SPEED);
 
         [HideInInspector]
         public Stat jump_force = new Stat(Settings.BASE_JUMP);
@@ -35,14 +30,19 @@ namespace Stats
         #region MeteredStats
 
         [Header("Metered Stats")]
-        public MeteredStat health;
-        public MeteredStat mana;
+        public MeteredStat health = new MeteredStat(Settings.BASE_HEALTH, Settings.BASE_HEALTH);
+        public MeteredStat mana = new MeteredStat(Settings.BASE_MANA, 0);
         public float mana_time { get; set; }
 
         #endregion
 
 
         #region MonoBehavior
+
+        private void Start()
+        {
+            
+        }
 
         private void FixedUpdate()
         {

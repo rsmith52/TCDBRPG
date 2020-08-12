@@ -81,18 +81,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 168436179eff24c868ce2be7fc27ab2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Elf_F Ranger
   speed:
-    base_value: 0
+    base_value: 3
   jump_force:
     base_value: 6.5
   health:
-    base_value: 0
-    cur_value: 0
+    base_value: 10
+    cur_value: 10
   mana:
-    base_value: 0
+    base_value: 10
     cur_value: 0
-  character_race: {fileID: 11400000, guid: fae2a2e281b54416f85be0d48cdb6ff7, type: 2}
+  name: Ranger_F
   character_class: {fileID: 11400000, guid: 042793b8dcb0d466998b2ec751fe426b, type: 2}
   weapon: {fileID: 0}
 --- !u!114 &5477972066326757310
