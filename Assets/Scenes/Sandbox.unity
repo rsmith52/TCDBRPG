@@ -700,6 +700,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &449523766 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5872152340056195725, guid: ec2fa5fe89e18498da940fa19d5d7e85,
+    type: 3}
+  m_PrefabInstance: {fileID: 1384959468}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &512159604
 GameObject:
   m_ObjectHideFlags: 3
@@ -1907,6 +1913,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 446072153305689009, guid: ec2fa5fe89e18498da940fa19d5d7e85,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1992462195}
     - target: {fileID: 519097611971233823, guid: ec2fa5fe89e18498da940fa19d5d7e85,
         type: 3}
       propertyPath: m_Layer
@@ -2002,6 +2013,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5960320349519636945, guid: d2320d9055bbf406597a23cc2747e267,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 449523766}
     - target: {fileID: 6621194320900869244, guid: d2320d9055bbf406597a23cc2747e267,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2062,6 +2078,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeleton
       objectReference: {fileID: 0}
+    - target: {fileID: 8053584412814442984, guid: d2320d9055bbf406597a23cc2747e267,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 449523766}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2320d9055bbf406597a23cc2747e267, type: 3}
 --- !u!4 &1701337315 stripped

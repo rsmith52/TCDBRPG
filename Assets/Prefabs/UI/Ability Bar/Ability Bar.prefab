@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3920207268931669902}
   - component: {fileID: 3633434313170254446}
+  - component: {fileID: 7755669711841014056}
   m_Layer: 5
   m_Name: Ability Bar
   m_TagString: Untagged
@@ -61,3 +62,15 @@ MonoBehaviour:
     type: 3}
   control_text: {fileID: 2282690395470209923, guid: adc6f9a1f628f4855a86613601328e7f,
     type: 3}
+--- !u!225 &7755669711841014056
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3920207268931669901}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0

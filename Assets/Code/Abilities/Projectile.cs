@@ -44,6 +44,10 @@ public class Projectile : MonoBehaviour
             other.GetComponent<CharacterStats>().Damage(damage);
             GameObject.Destroy(gameObject);
         }
+
+        // Check if collision is with obstacle, and destroy projectile if so
+        else if (other.gameObject.layer == Constants.OBJECT_LAYER)
+            GameObject.Destroy(gameObject);
     }
 
     public void Fire(Vector3 direction, float range, float speed, int damage)
