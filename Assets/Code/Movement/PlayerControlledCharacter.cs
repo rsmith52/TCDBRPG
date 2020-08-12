@@ -26,16 +26,16 @@ namespace Movement
         {
             // Vertical
             float inputY = 0;
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetKey(Settings.KEY_UP))
                 inputY = 1;
-            else if (Input.GetKey(KeyCode.S))
+            else if (Input.GetKey(Settings.KEY_DOWN))
                 inputY = -1;
 
             // Horizontal
             float inputX = 0;
-            if (Input.GetKey(KeyCode.D))
+            if (Input.GetKey(Settings.KEY_RIGHT))
                 inputX = 1;
-            else if (Input.GetKey(KeyCode.A))
+            else if (Input.GetKey(Settings.KEY_LEFT))
                 inputX = -1;
 
             // Jump

@@ -49,13 +49,13 @@ namespace Abilities
 
         private void Update()
         {
-            if (!mouse_pressed && Input.GetMouseButtonDown(0) &&
+            if (!mouse_pressed && Input.GetMouseButtonDown((int)Settings.MOUSE_BASIC_ATTACK) &&
                 cool_down >= cool_down_period)
             {
                 BasicAttack();
                 mouse_pressed = true;
             }
-            if (mouse_pressed && Input.GetMouseButtonUp(0))
+            if (mouse_pressed && Input.GetMouseButtonUp((int)Settings.MOUSE_BASIC_ATTACK))
                 mouse_pressed = false;
             cool_down += Time.deltaTime;
         }

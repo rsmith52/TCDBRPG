@@ -76,7 +76,7 @@ namespace UI
                 text_obj = Instantiate(control_text);
                 text_obj.transform.SetParent(bg.transform);
                 text = text_obj.GetComponent<TextMeshProUGUI>();
-                text.SetText((i + 2).ToString());
+                text.SetText(Constants.TEXT_ABILITIES[i]);
                 rect_transform = bg.GetComponent<RectTransform>();
                 rect_transform.anchoredPosition = new Vector3(
                     -1 * Constants.ABILITY_BAR_X_OFFSET * ((Settings.HAND_SIZE - 1) / 2f) + i * Constants.ABILITY_BAR_X_SPACER,
@@ -92,7 +92,7 @@ namespace UI
             text_obj = Instantiate(control_text);
             text_obj.transform.SetParent(bg.transform);
             text = text_obj.GetComponent<TextMeshProUGUI>();
-            text.SetText(1.ToString());
+            text.SetText(Constants.TEXT_SPECIAL_ABILITY);
             rect_transform = bg.GetComponent<RectTransform>();
             rect_transform.anchoredPosition = new Vector3(
                 -1 * Constants.ABILITY_BAR_X_OFFSET * ((Settings.HAND_SIZE - 1) / 2f) - (1.5f * Constants.ABILITY_BAR_X_OFFSET), Constants.ABILITY_BAR_Y_OFFSET, 0);
@@ -106,7 +106,7 @@ namespace UI
             text_obj = Instantiate(control_text);
             text_obj.transform.SetParent(bg.transform);
             text = text_obj.GetComponent<TextMeshProUGUI>();
-            text.SetText("Next");
+            text.SetText(Constants.TEXT_ABILITY_BAR_NEXT);
             rect_transform = bg.GetComponent<RectTransform>();
             rect_transform.anchoredPosition = new Vector3(
                 Constants.ABILITY_BAR_X_OFFSET * ((Settings.HAND_SIZE - 1) / 2f) + (1.5f * Constants.ABILITY_BAR_X_OFFSET), Constants.ABILITY_BAR_Y_OFFSET, 0);
@@ -119,27 +119,27 @@ namespace UI
         private void Update()
         {
             // Check input for selected ability
-            if (Input.GetKey(KeyCode.Q))
+            if (Input.GetKey(Settings.KEY_ABILITY_CANCEL))
                 selected_index = -1; // None selected
-            else if (Input.GetKey(KeyCode.Alpha1))
-                selected_index = 0;
-            else if (Input.GetKey(KeyCode.Alpha2) && Settings.HAND_SIZE >= 1)
+            else if (Input.GetKey(Settings.KEY_SPECIAL_ABILITY))
+                selected_index = 0; // Special selected
+            else if (Input.GetKey(Settings.KEYS_ABILITIES[0]) && Settings.HAND_SIZE >= 1)
                 selected_index = 1;
-            else if (Input.GetKey(KeyCode.Alpha3) && Settings.HAND_SIZE >= 2)
+            else if (Input.GetKey(Settings.KEYS_ABILITIES[1]) && Settings.HAND_SIZE >= 2)
                 selected_index = 2;
-            else if (Input.GetKey(KeyCode.Alpha4) && Settings.HAND_SIZE >= 3)
+            else if (Input.GetKey(Settings.KEYS_ABILITIES[2]) && Settings.HAND_SIZE >= 3)
                 selected_index = 3;
-            else if (Input.GetKey(KeyCode.Alpha5) && Settings.HAND_SIZE >= 4)
+            else if (Input.GetKey(Settings.KEYS_ABILITIES[3]) && Settings.HAND_SIZE >= 4)
                 selected_index = 4;
-            else if (Input.GetKey(KeyCode.Alpha6) && Settings.HAND_SIZE >= 5)
+            else if (Input.GetKey(Settings.KEYS_ABILITIES[4]) && Settings.HAND_SIZE >= 5)
                 selected_index = 5;
-            else if (Input.GetKey(KeyCode.Alpha7) && Settings.HAND_SIZE >= 6)
+            else if (Input.GetKey(Settings.KEYS_ABILITIES[5]) && Settings.HAND_SIZE >= 6)
                 selected_index = 6;
-            else if (Input.GetKey(KeyCode.Alpha8) && Settings.HAND_SIZE >= 7)
+            else if (Input.GetKey(Settings.KEYS_ABILITIES[6]) && Settings.HAND_SIZE >= 7)
                 selected_index = 7;
-            else if (Input.GetKey(KeyCode.Alpha9) && Settings.HAND_SIZE >= 8)
+            else if (Input.GetKey(Settings.KEYS_ABILITIES[7]) && Settings.HAND_SIZE >= 8)
                 selected_index = 8;
-            else if (Input.GetKey(KeyCode.Alpha0) && Settings.HAND_SIZE >= 9)
+            else if (Input.GetKey(Settings.KEYS_ABILITIES[8]) && Settings.HAND_SIZE >= 9)
                 selected_index = 9;
         }
 

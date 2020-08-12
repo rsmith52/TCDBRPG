@@ -6,6 +6,18 @@
 
 namespace Utilities
 {
+
+    #region Enums
+
+    public enum MouseButton
+    {
+        Left,
+        Right,
+        Middle
+    }
+
+    #endregion
+
     public class Settings
     {
         #region Control Settings
@@ -14,6 +26,16 @@ namespace Utilities
         public static readonly bool ALLOW_WALK_OFF = false;
 
         // Controls
+        public static readonly KeyCode KEY_UP = KeyCode.W;
+        public static readonly KeyCode KEY_LEFT = KeyCode.A;
+        public static readonly KeyCode KEY_DOWN = KeyCode.S;
+        public static readonly KeyCode KEY_RIGHT = KeyCode.D;
+        public static readonly MouseButton MOUSE_BASIC_ATTACK = MouseButton.Left;
+        public static readonly KeyCode KEY_ABILITY_CANCEL = KeyCode.Q;
+        public static readonly KeyCode KEY_SPECIAL_ABILITY = KeyCode.Alpha1;
+        public static readonly KeyCode[] KEYS_ABILITIES = new KeyCode[] { KeyCode.Alpha2,
+            KeyCode.Alpha3, KeyCode.Alpha4, KeyCode.Alpha5, KeyCode.Alpha6, KeyCode.Alpha7,
+            KeyCode.Alpha8, KeyCode.Alpha9, KeyCode.Alpha0 };
         public static readonly KeyCode KEY_MAP_TOGGLE = KeyCode.M;
 
         #endregion

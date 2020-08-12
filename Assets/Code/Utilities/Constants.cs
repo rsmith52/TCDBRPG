@@ -65,6 +65,10 @@ namespace Utilities
         public static readonly float ABILITY_BAR_X_OFFSET = 112.5f;
         public static readonly float ABILITY_BAR_X_SPACER = 106.25f;
         public static readonly int ABILITY_BAR_Y_OFFSET = 100;
+        public static readonly string TEXT_ABILITY_BAR_NEXT = "Next";
+        public static readonly string TEXT_SPECIAL_ABILITY = "1";
+        public static readonly string[] TEXT_ABILITIES = new string[] {"2", "3",
+            "4", "5", "6", "7", "8", "9", "0" };
 
         // Health Bars
         public static readonly float HEALTH_BAR_SIZE = 1.5f;
