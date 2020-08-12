@@ -78,8 +78,12 @@ namespace UI
                 direction = surface_hit - character_pos;
             }
             else
+            {
+                if (target == null)
+                    target = character.transform;
                 direction = target.position - character_pos;
-            
+            }
+
             // Normalize direction from character to point
             direction = new Vector3(direction.x, 0, direction.z).normalized;
         }
