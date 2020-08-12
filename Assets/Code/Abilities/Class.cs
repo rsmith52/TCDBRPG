@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 /*
  * This code defines a character class.
@@ -39,6 +40,10 @@ namespace Abilities
         public Weapon weapon = null;
         [SerializeField]
         protected Ability class_special = null;
+
+        [Header("Themes")]
+        [SerializeField]
+        public List<string> themes = new List<string>();
 
         #endregion
 

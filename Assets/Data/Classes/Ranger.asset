@@ -15,5 +15,10 @@ MonoBehaviour:
   name: Ranger
   description: A nature loving bow user.
   icon: {fileID: 0}
+  suggested_role: 0
   weapon: {fileID: 1135723246993997243, guid: 74002c249056a46cca6df45d2edeae45, type: 3}
   class_special: {fileID: 0}
+  themes:
+  - Hunter
+  - Trapper
+  - Beast Master
