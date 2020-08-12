@@ -6,7 +6,19 @@
 
 namespace Abilities
 {
-    [CreateAssetMenu(fileName = "Class", menuName = "Data/Class", order = 3)]
+    #region Enums
+
+    public enum Role
+    {
+        Striker,
+        Tank,
+        Controller,
+        Support
+    }
+
+    #endregion
+
+    [CreateAssetMenu(fileName = "Class", menuName = "Data/Class", order = 1)]
     public class Class : ScriptableObject
     {
         #region ScriptableObject
@@ -19,6 +31,8 @@ namespace Abilities
         protected string description = "Class Description";
         [SerializeField]
         protected Sprite icon = null;
+        [SerializeField]
+        protected Role suggested_role = Role.Striker;
 
         [Header("Abilities")]
         [SerializeField]

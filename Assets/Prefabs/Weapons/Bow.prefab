@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Bow
-  description: Weapon Description
+  description: A simple ranged weapon.
   animation_length: 0.3
   offset_from_character_mod: 0.125
   target: 2

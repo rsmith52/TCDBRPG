@@ -798,6 +798,12 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 667946165679202845, guid: bcc5aee580c584be9ae8a4a5d1d15162,
+        type: 3}
+      propertyPath: character_class
+      value: 
+      objectReference: {fileID: 11400000, guid: 8b4a6e0282aa14ccf92da613a99ff910,
+        type: 2}
     - target: {fileID: 1048138557503322700, guid: bcc5aee580c584be9ae8a4a5d1d15162,
         type: 3}
       propertyPath: m_Enabled
