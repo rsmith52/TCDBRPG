@@ -802,7 +802,7 @@ PrefabInstance:
         type: 3}
       propertyPath: character_class
       value: 
-      objectReference: {fileID: 11400000, guid: 8b4a6e0282aa14ccf92da613a99ff910,
+      objectReference: {fileID: 11400000, guid: 042793b8dcb0d466998b2ec751fe426b,
         type: 2}
     - target: {fileID: 1048138557503322700, guid: bcc5aee580c584be9ae8a4a5d1d15162,
         type: 3}
@@ -1367,7 +1367,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 20
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
