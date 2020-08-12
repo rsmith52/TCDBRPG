@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Abilities;
 using Stats;
@@ -17,9 +18,6 @@ namespace UI
 
         [Header("Relations")]
         [SerializeField]
-        protected PlayerStats player_stats = null;
-
-        [SerializeField]
         protected AbilityUser ability_user = null;
 
         // Ability Bar Parts
@@ -35,6 +33,7 @@ namespace UI
 
         #region Fields
 
+        private EventSystem event_system;
         private GameObject[] ability_boxes;
         private int selected_index;
         private RectTransform rect_transform;
@@ -49,6 +48,10 @@ namespace UI
 
         private void Start()
         {
+            // Get event system
+            event_system = GameObject.Find("EventSystem").GetComponent<EventSystem>();
+
+            // Setup Ability Boxes
             ability_boxes = new GameObject[Settings.HAND_SIZE];
             for (int i = 0; i < Settings.HAND_SIZE; i++)
             {
@@ -66,14 +69,16 @@ namespace UI
                 ability_boxes[i] = bg;
             }
 
-            // Set first button as selected
-            selected_index = 1;
+            // Set no ability as selected - may change to set first as selected
+            selected_index = -1;
         }
 
         private void Update()
         {
             // Check input for selected ability
-            if (Input.GetKey(KeyCode.Alpha1))
+            if (Input.GetKey(KeyCode.Q))
+                selected_index = -1; // None selected
+            else if (Input.GetKey(KeyCode.Alpha1))
                 selected_index = 1;
             else if (Input.GetKey(KeyCode.Alpha2) && Settings.HAND_SIZE >= 2)
                 selected_index = 2;
@@ -97,9 +102,19 @@ namespace UI
 
         private void FixedUpdate()
         {
-            bg = ability_boxes[selected_index - 1];
-            button = bg.GetComponent<Button>();
-            button.Select();
+            if (selected_index > 0)
+            {
+                bg = ability_boxes[selected_index - 1];
+                button = bg.GetComponent<Button>();
+                button.Select();
+            }
+            else if (selected_index == 0)
+                // Set to class special
+                return;
+            else if (selected_index == -1)
+                // Set to basic, no active ability
+                event_system.SetSelectedGameObject(null);
+            
         }
 
         #endregion
