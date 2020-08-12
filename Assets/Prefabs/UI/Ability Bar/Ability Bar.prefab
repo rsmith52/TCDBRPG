@@ -48,10 +48,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acbe105eca3034cebb8de99f1794f406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character_stats: {fileID: 0}
+  ability_user: {fileID: 0}
   ability_bg: {fileID: 304365588687119461, guid: 833066e0d836146a390c9e8c3ea5453d,
     type: 3}
   first_ability_box: {fileID: 5557821216732470927, guid: 83af7ae87be4b4fd1b53ce166c165688,
     type: 3}
   ability_box: {fileID: 77880176254156788, guid: e5d82e51157114c2d95f35b31765f24a,
+    type: 3}
+  special_bg: {fileID: 5036929613435096778, guid: 78bbc2ac50bbd431a986ef3b510f51a3,
+    type: 3}
+  special_box: {fileID: 4584408095327858452, guid: 32a4f3fe1bbdd4f7a957ae8e2b3d91bf,
+    type: 3}
+  control_text: {fileID: 2282690395470209923, guid: adc6f9a1f628f4855a86613601328e7f,
     type: 3}

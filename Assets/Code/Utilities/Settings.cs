@@ -15,7 +15,6 @@ namespace Utilities
 
         // Controls
         public static readonly KeyCode KEY_MAP_TOGGLE = KeyCode.M;
-        public static readonly KeyCode KEY_ATTACK = KeyCode.Space;
 
         #endregion
 
@@ -23,7 +22,7 @@ namespace Utilities
         #region Deck Settings
 
         public static readonly int DECK_SIZE = 10;
-        public static readonly int HAND_SIZE = 5; // Current code supports up to 10
+        public static readonly int HAND_SIZE = 5; // Current code supports up to 9
         public static readonly float SHUFFLE_TIME = 1f; // seconds
 
         #endregion
