@@ -78,6 +78,7 @@ namespace UI
                 direction = surface_hit - character_pos;
             }
             else
+            // Following a set target game object
             {
                 if (target == null)
                     target = character.transform;
